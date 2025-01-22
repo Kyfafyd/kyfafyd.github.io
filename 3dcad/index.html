@@ -1,0 +1,25 @@
+<!-- build time:Sun Mar 15 2020 14:18:44 GMT+0800 (GMT+08:00) --><!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="author" content="Zhao Wang"><title>Zhao Wang</title><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><script src="/js/script.js"></script><script src="/js/tocbot.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-155153044-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-155153044-1")</script></head><body><div class="wrapper"><header><nav class="navbar"><div class="container"><div class="navbar-header header-logo"><a href="/">ZHAO WANG</a></div><div class="menu navbar-right"><a class="menu-item" href="/">Home</a> <a class="menu-item" href="/about">About</a> <a class="menu-item" href="/resume">Resume</a> <a class="menu-item" href="/contact">Contact</a></div></div></nav><nav class="navbar-mobile" id="nav-mobile"><div class="container"><div class="navbar-header"><div><a href="/">ZHAO WANG</a><a id="mobile-toggle-theme">·&nbsp;Light</a></div><div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div></div><div class="menu" id="mobile-menu"><a class="menu-item" href="/">Home</a> <a class="menu-item" href="/about">About</a> <a class="menu-item" href="/resume">Resume</a> <a class="menu-item" href="/contact">Contact</a></div></div></nav></header><script>var mobileBtn=function(){var e=document.getElementsByClassName("menu-toggle")[0],t=document.getElementById("mobile-menu");e.classList.contains("active")?(e.classList.remove("active"),t.classList.remove("active")):(e.classList.add("active"),t.classList.add("active"))}</script><div class="main"><div class="container"><article class="post-wrap page"><h2 class="post-title"></h2><section class="post-content"><p><strong><div style="font-size:17pt;font-family:Lato">面向物质结构三维建模的计算机辅助设计</div></strong></p><hr><p><strong><font color="#4682B4">预览</font></strong></p><p><img src="display.png" alt="avatar"></p><p><strong><font color="#4682B4">演示视频(Dropbox)</font></strong></p><ul><li><a href="https://www.dropbox.com/s/vresutkqoxcqehd/moscule1.mp4?dl=0" target="_blank" rel="noopener">Demo1</a></li><li><a href="https://www.dropbox.com/s/1j4t8kkhuzyhbz1/moscule2.mp4?dl=0" target="_blank" rel="noopener">Demo2</a></li></ul><p><strong><font color="#4682B4">使用说明</font></strong></p><ul><li>开始界面点击start开始建模，点击quit可以退出程序；进入建模界面之后，初始状态在绘制场景中有两个单键连接的原子，用户可以选择在此基础上建模，也可以选择清空屏幕之后从头开始建模；</li></ul><ul><li>点击鼠标右键，出现一个右键菜单，分别为清空屏幕、添加一个原子、添加单键、改变原子大小、改变原子贴图以及zoom in/out，在界面右侧还有一个侧边栏，实现截图，退出建模的功能；在建模过程中，可以通过鼠标拖动来在不同视角观察建模分子，也可以通过鼠标左键单击选中原子，拖动原子位置。</li></ul><ul><li>在建模过程中，可以通过IJKL按键调整光源位置以及WASD按键调整视角位置，F按键可以实现对当前建模分子的截屏。</li></ul><p><strong><font color="#4682B4">功能界定</font></strong></p><p>基于OpenGL与C++开发的面向物质结构建模的三维CAD软件，可以实现</p><ul><li>对物质结构<em>球棒模型</em>的搭建与拼接</li></ul><ul><li>球棒材质的变换与光线的转换</li></ul><ul><li>球棒大小、位置的自由控制</li></ul><ul><li>三维全方位物质几何结构观察(鼠标拖拉)</li></ul><ul><li>视角漫游(Zoom In / Zoom Out)</li></ul><ul><li>几何模型OBJ文件导出保存与导入</li></ul><ul><li>实时应用窗口的截屏</li></ul><p><strong><font color="#4682B4">高级要求</font></strong></p><ul><li>NURBS曲面建模实现元素间双键的连接<br>软管道的中心线为NURBS曲线，利用反馈模式得到坐标，结合向量间夹角计算，利用短圆柱拼接实现</li></ul><ul><li>友好的UI交互<br>利用GLUT维护的右键菜单，以及独立实现的侧边栏</li></ul><ul><li>复杂材质<br>通过鼠标拾取，左键选择对象，右键菜单切换不同材质(本项目用图为太阳系图)</li></ul><ul><li>碰撞检测</li></ul><ul><li>对象表达能力(球棒模型拼接，可以实现包括金刚石模型在内的三维仿真)<br>利用深度、视角等信息实现不同物体前后间的遮挡以进一步形成组合体</li></ul><p><strong><font color="#4682B4">代码</font></strong></p><ul><li>项目代码<a href="https://github.com/Liang-ZX/CGproject" target="_blank" rel="noopener">在这里</a></li></ul></section></article></div></div><footer id="footer" class="footer"><div class="copyright"><span>Keep Your Faith and Follow Your Dreams © Zhao Wang</span></div></footer></div></body></html><!-- rebuild by neat -->

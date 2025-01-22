@@ -1,0 +1,45 @@
+# main links links
+main:
+  - title: "Home"
+    url: 
+
+  - title: "Publications"
+    url: /publications
+
+  # - title: "Talks"
+  #   url: /talks/    
+
+  # - title: "Teaching"
+  #   url: /teaching/    
+    
+  - title: "Awards"
+    url: /awards
+  
+  # - title: "Teaching"
+  #   url: /teaching
+
+  # - title: "Services"
+  #   url: /services
+        
+  # - title: "About"
+  #   url: /about/
+
+  # - title: "Research"
+  #   url: /research/
+    
+  # - title: "Resume"
+  #   url: /cv/Resume_ZHAO_WANG.pdf
+  
+
+
+  # - title: "Personal Blog"
+  #   url: /year-archive/
+
+  # - title: "Contact"
+  #   url: /contact
+    
+  # - title: "Misc"
+  #   url: /misc
+
+  - title: "Others"
+    url: /others

@@ -1,0 +1,307 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{resume} % Use the custom resume.cls style
+
+
+\usepackage[UTF8]{ctex}
+
+
+\usepackage[super]{nth}
+\usepackage{enumitem}
+\usepackage[left=0.65in,right=0.65in,top=0.7in,bottom=0.7in]{geometry} % Document margins
+\usepackage{xcolor}
+\definecolor{colorlink}{HTML}{00008B}
+\usepackage{hyperref}
+\hypersetup {
+    colorlinks=true,
+    linkcolor=colorlink,
+    filecolor=magenta,      
+    urlcolor=colorlink,
+}
+
+\usepackage{fontspec}
+
+%\setCJKmainfont{KaitiTCRegular}   % 设置中文衬线字体格式
+%\setCJKmainfont{STKaitiTC-Regular}%衬线字体 
+%\setCJKsansfont{STKaitiTC-Bold}%serif是有衬线字体sans serif无衬线字体。 # 试下来好像只有这个有效
+%\setCJKmonofont{STKaitiTC-Bold}%中文等宽字体
+
+
+%\setCJKmainfont{MicrosoftSansSerif}
+%\setCJKsansfont{MicrosoftSansSerif}
+
+
+
+\setsansfont[Path=fonts/,
+Scale=MatchLowercase,
+UprightFont = *-roman, 
+BoldFont = *-bold,
+ItalicFont = *-italic,
+BoldItalicFont = *-bolditalic,
+SmallCapsFont=*-roman
+]{urw-palladio-l}
+
+\renewcommand\familydefault{\sfdefault}
+\newcommand{\hl}[1]{\textcolor{red}{#1}}
+
+
+% \setenumerate[1]{topsep=0em, leftmargin=1em, itemsep=-0.5em}
+\setitemize[1]{topsep=-0.2em, leftmargin=0em, itemsep=-0.35em}
+%\geometry{paperheight=29.5cm, paperwidth=22cm}
+
+
+\begin{document}
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  {\huge\bfseries 王钊} \vspace{1.5ex}\\
+  电话: (+852) 6151-2818 & GitHub主页: \href{https://github.com/kyfafyd}{github.com/kyfafyd}\\
+  邮箱: \href{mailto:zwang21@cse.cuhk.edu.hk}{zwang21@cse.cuhk.edu.hk} & 个人主页: \href{https://kyfafyd.wang}{kyfafyd.wang}
+\end{tabular*}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{教育背景}
+
+\textbf{\bf \href{https://www.cuhk.edu.hk}{香港中文大学}} \hfill{\it 2021年8月 -- 2025年7月 (预计)}\\
+{\it 博士生, 计算机科学与工程系} \hfill{\it 沙田, 香港}
+\begin{itemize}
+    %\item {\bf 研究课题:} Improving Large-scale Deep Models for Out-of-Distribution Generalization 
+    \item {\bf 导师:} \href{http://www.cse.cuhk.edu.hk/~qdou}{窦琪}教授 (\textbf{港澳优青})
+\end{itemize}
+
+\vspace{0.5em}
+{\bf \href{https://www.zju.edu.cn/}{浙江大学}} \hfill{\it 2017年9月 -- 2021年6月}\\
+{\it 工学学士, 信息与电子工程学院} \hfill{\it 杭州, 中国}
+\begin{itemize}
+    %\item {\bf 毕业论文:} Semi-supervised Medical Image Segmentation and Classification
+    \item {\bf 导师:} \href{https://person.zju.edu.cn/honggangzhang}{张宏纲}教授 ({\bf IEEE Fellow, AAIA Fellow})
+\end{itemize}
+
+\end{rSection}
+
+
+\begin{rSection}{研究兴趣}
+我的研究兴趣在于{\bf 计算机视觉}和{\bf 机器学习}，旨在提高深度模型的分布外 (OoD) 泛化能力。最近，我正在研究人工智能内容生成 (AIGC)，例如真实视频和人体动作.
+\end{rSection}
+
+
+\begin{rSection}{实习经历}
+
+{\bf \href{https://www.tencent.com/en-us/}{腾讯}} \hfill{\it 2024年8月至今}\\
+{\it 研究型实习生, 数据研究平台} \hfill{\it 深圳, 中国}
+\begin{itemize}
+    \item {\bf 研究项目:} 文生视频基模型
+ 	\item {\bf 导师:} \href{https://scholar.google.com.hk/citations?user=q9Fn50QAAAAJ}{王红法}, \href{https://mbobogo.github.io/}{闽少波}博士
+\end{itemize}
+
+%{\bf \href{https://www.noahlab.com.hk/}{Huawei Technologies, Noah's Ark Lab}} \hfill{\it Aug. 2023 -- Jul. 2024}\\
+%{\it Research Intern, AI Theory Lab} \hfill{\it Shatin, Hong Kong}
+%\begin{itemize}
+   % \item {\bf Topic:} AI-Generated Content (AIGC)
+ 	%\item {\bf Advisor:} Dr. \href{https://xieenze.github.io/}{Enze Xie}, Dr. \href{https://dblp.org/pid/152/6095.html}{Aoxue Li}
+%\end{itemize}
+
+{\bf \href{https://www.shlab.org.cn}{上海人工智能实验室}} \hfill{\it 2023年11月至今}\\
+{\it 研究型实习生, 人工智能科学组} \hfill{\it 上海, 中国 (远程)}
+\begin{itemize}
+    \item {\bf 研究项目:} 以人为中心的视频/动作生成
+ 	\item {\bf 导师:} \href{https://wlouyang.github.io/}{欧阳万里}教授, \href{https://www.danxurgb.net/}{徐旦}教授, \href{https://scholar.google.com.tw/citations?user=TJ4ihdkAAAAJ}{唐诗翔}教授
+\end{itemize}
+
+{\bf \href{https://www.huawei.com/cn/}{华为}} \hfill{\it 2023年8月 -- 2024年7月}\\
+{\it 研究型实习生, 诺亚方舟实验室} \hfill{\it 沙田, 香港}
+\begin{itemize}
+    \item {\bf 研究项目:} 个性化文生视频, 提升深度学习模型域外泛化能力
+ 	\item {\bf 导师:} \href{https://zhenguol.github.io/}{李震国}博士, \href{https://xieenze.github.io/}{谢恩泽}博士, \href{https://openreview.net/profile?id=~Aoxue_Li2}{李傲雪}博士, \href{https://scholar.google.com.hk/citations?user=1M00Yg8AAAAJ}{周峰暐}博士
+\end{itemize}
+
+{\bf \href{https://www.sensetime.com/en}{商汤科技}} \hfill{\it 2021年4月 -- 2021年6月}\\
+{\it 研究型实习生, 智慧城市组} \hfill{\it 杭州, 中国}
+\begin{itemize}
+    \item {\bf 研究项目:} 表征学习
+ 	\item {\bf 导师:} \href{http://zhaorui.xyz/}{赵瑞}博士, \href{https://zhufengx.github.io/}{朱烽}博士
+\end{itemize}
+
+{\bf \href{https://ucsd.edu}{加州大学圣迭戈分校}} \hfill{\it 2020年2月 -- 2020年5月}\\
+{\it 访问学生, 电气与计算机工程系} \hfill{\it La Jolla, CA}
+\begin{itemize}
+    \item {\bf 研究项目:} 医学图像生成
+ 	\item {\bf 导师:} \href{https://sites.google.com/site/pengtaoxie2008}{谢澎涛}教授
+\end{itemize}
+
+\end{rSection}
+
+
+
+
+%--------------------------------------------------------------------------------
+%    Projects And Seminars
+%-----------------------------------------------------------------------------------------------
+\begin{rSection}{论文}
+\href{https://scholar.google.com/citations?user=1kEufdwAAAAJ}{\bf 谷歌学术主页} (截至2024年10月, {\bf 引用次数403})
+\vspace{-0.3em}
+
+注: {\bf $^*$} 为共同第一作者.
+
+\vspace{0.3em}
+{\bf Manuscript}
+\vspace{-0.2em}
+\begin{enumerate}[label={[M\arabic*]}, topsep=0em, leftmargin=1.4em, itemsep=-0.5em]
+	\item {\bf Zhao Wang}, Aoxue Li, Lingting Zhu, Yong Guo, Qi Dou, Zhenguo Li. “CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects”. {\it TMM在投}, 2024. \href{https://arxiv.org/abs/2401.09962}{\bf [论文链接]}
+	\item Yuan Wang$^*$, {\bf Zhao Wang}$^*$, Junhao Gong$^*$, Di Huang, Tong He, Wanli Ouyang, Jile Jiao, Xuetao Feng, Qi Dou, Shixiang Tang, Dan Xu. “Holistic-Motion2D: Scalable Whole-body Human Motion Generation in 2D Space”. {\it TPAMI在投}, 2024. \href{https://arxiv.org/abs/2406.11253}{\bf [论文链接]}
+	\item {\bf Zhao Wang}, Chang Liu, Lingting Zhu, Shaoting Zhang, Qi Dou. “Improving Foundation Model for Endoscopy Video Analysis via Representation Learning on Long Sequences”. {\it JBHI在投}, 2024. 
+%\href{}{\bf [paper]}
+	\item Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, {\bf Zhao Wang}, Lequan Yu. “Large Images are Gaussians: High-quality Large Image Representations with 2D Gaussian Splatting”. {\it AAAI在投}, 2024. 
+%\href{}{\bf [paper]}
+	\item Qiao Deng, Zhongzhen Huang, Yunqi Wang, Zhichuan Wang, {\bf Zhao Wang}, Xiaofan Zhang, Qi Dou, Yeung Yu Hui, Edward Hui. “Grounded Knowledge-Enhanced Medical VLP for Chest X-Ray”. {\it TBME在投}, 2024. \href{https://arxiv.org/abs/2404.14750}{\bf [论文链接]}
+    	
+\end{enumerate}
+
+\vspace{0.3em}
+{\bf 会议}
+\vspace{-0.2em}
+\begin{enumerate}[label={[C\arabic*]}, topsep=0em, leftmargin=1.2em, itemsep=-0.5em]
+
+	\item {\bf Zhao Wang}, Aoxue Li, Zhenguo Li, Qi Dou. “Efficient Transferability Assessment for Selection of Pre-trained Detectors”. {\it IEEE/CVF Winter Conference on Applications of Computer Vision} ({\bf WACV}), 2024. \href{https://arxiv.org/abs/2403.09432}{\bf [论文链接]}
+	
+	\item {\bf Zhao Wang}, Aoxue Li, Fengwei Zhou, Zhenguo Li, Qi Dou. “Open-Vocabulary Object Detection with Meta Prompt Representation and Instance Contrastive Optimization”. {\it British Machine Vision Conference} ({\bf BMVC}), 2023. \href{https://arxiv.org/abs/2403.09433}{\bf [论文链接]}
+	
+	\item {\bf Zhao Wang}$^*$, Chang Liu$^*$, Shaoting Zhang, Qi Dou. “Foundation Model for Endoscopy Video Analysis via Large-scale Self-supervised Pre-train”. {\it International Conference on Medical Image Computing and Computer-Assisted Intervention} ({\bf MICCAI}), 2023. \href{https://arxiv.org/abs/2306.16741}{\bf [论文链接]} (\hl{early accept})
+	\item Lingting Zhu, {\bf Zhao Wang}, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. “Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting”. {\it International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop} ({\bf MICCAI EARTH}), 2024. \href{https://arxiv.org/abs/2401.11535}{\bf [论文链接]}
+	
+	\item Nan Lu, {\bf Zhao Wang}, Xiaoxiao Li, Gang Niu, Qi Dou, Masashi Sugiyama. “Federated Learning from Only Unlabeled Data with Class-Conditional-Sharing Clients”. {\it International Conference on Learning Representations} ({\bf ICLR}), 2022. \href{https://openreview.net/forum?id=WHA8009laxu}{\bf [论文链接]}
+	
+	\item Jiaping Hu, Chuanyang Zheng, Lijie Zhong, Keyan Yu, Yanjun Chen, {\bf Zhao Wang}, Zhongping Zhang, Qi Dou, Xiaodong Zhang. “Predicting Knee Osteoarthritis Progression with a interpretable Deep Learning Approach on Magnetic Resonance Imaging: data from the Osteoarthritis Initiative”. {\it International Society for Magnetic Resonance in Medicine Annual Meeting \& Exhibition} ({\bf ISMRM}), 2022. \href{https://archive.ismrm.org/2022/3102.html}{\bf [论文链接]}
+	
+   	\item Jiaping Hu$^*$, {\bf Zhao Wang$^*$}, Lijie Zhong, Keyan Yu, Yanjun Chen, Yingjie Mei, Qi Dou, Xiaodong Zhang. “Identification of Bone Marrow Lesions on Magnetic Resonance Imaging with Weakly Super-\allowbreak vised  Deep Learning”. {\it International Society for Magnetic Resonance in Medicine Annual Meeting \& Exhibition} ({\bf ISMRM}), 2021. \href{https://archive.ismrm.org/2021/4062.html}{\bf [论文链接]}
+   	
+\end{enumerate}
+
+\vspace{0.3em}
+{\bf 期刊}
+\vspace{-0.2em}
+\begin{enumerate}[label={[J\arabic*]}, topsep=0em, leftmargin=1em, itemsep=-0.5em]
+
+ 	\item {\bf Zhao Wang}, Quande Liu, Qi Dou. “Contrastive Cross-site Learning with Redesigned Net for COVID-19 CT Classification”. {\it IEEE Journal of Biomedical and Health Informatics} ({\bf JBHI, IF: 7.7}), 2020. \href{https://ieeexplore.ieee.org/document/9194240}{\bf [论文链接]} (\hl{在\href{https://scholar.google.com/citations?hl=en\&view\_op=list\_hcore\&venue=L0V86ydYD6YJ.2024\&vq=eng\_medicalinformatics\&cstart=20}{谷歌学术影响力}中排名22})
+ 	
+    	\item Shizhan Gong, Yuan Zhong, Wenao Ma, Jinpeng Li, {\bf Zhao Wang}, Jingyang Zhang, Pheng-Ann Heng, Qi Dou. “3DSAM-adapter: Holistic Adaptation of SAM from 2D to 3D for Promptable Medical Image Segmentation”. {\it Medical Image Analysis} ({\bf MedIA, IF: 10.7}), 2023. \href{https://arxiv.org/abs/2306.13465}{\bf [论文链接]}
+
+	\item Jiaping Hu, Chuanyang Zheng, Qingling Yu, Lijie Zhong, Keyan Yu, Yanjun Chen, {\bf Zhao Wang}, Bin Zhang, Qi Dou, Xiaodong Zhang. “DeepKOA: A Deep-learning Model Predicts Progression in Knee Osteoarthritis Using Multimodal Magnetic Resonance Images from the Osteoarthritis Initiative”. {\it Quantitative Imaging in Medicine and Surgery} ({\bf QIMS, IF: 4.63}), 2023. \href{https://qims.amegroups.com/article/view/114391}{\bf [论文链接]}
+
+\end{enumerate}
+
+
+
+\end{rSection}
+
+
+
+
+
+
+
+
+
+
+\begin{rSection}{代表性奖项} 
+\begin{itemize}
+	%\item Postgraduate Studentship, CUHK \hfill{\it 2021 -- 2025}
+	%\item The Outstanding Graduates Award, ZJU \hfill{\it 2021}
+	\item “启真杯”浙江大学学生十大学术新成果提名奖 \hfill{\it 2021}
+	\\ {\bf 浙江大学最高学生科研成果奖, 仅在超过5万名本科生/研究生/博士生中选出20人}
+	%\item The Outstanding Undergraduate Thesis Award, ZJU \hfill{\it 2021}
+	%\item The Outstanding Graduates Award, ZJU \hfill{\it 2021}
+   	\item H奖, 美国大学生数学建模大赛 \hfill{\it 2020}
+    	%\item Research and Innovation Excellence Award, ZJU \hfill{\it 2020}
+ 	%\item Scholarship for Outstanding Students, Zhejiang University \hfill{\it 2019}
+ 	%\item Academic Excellence Award, Zhejiang University \hfill{\it 2019}
+ 	%\item National Training Base Talents Scholarship \hfill{\it 2019}
+ 	\item 浙江大学“中控杯”机器人比赛二等奖 (排名: {\bf 6}/200+ 队伍) \hfill{\it 2018}
+ 	\item 西北农林科技大学奖学金 (排名: {\bf 2}/1000+ 高中生) \hfill{\it 2016}
+ 	\item 全国中学生物理竞赛一等奖 (省级, 前{\bf 0.1\%}) \hfill{\it 2016}
+\end{itemize}
+\end{rSection}
+
+
+
+
+
+
+
+
+
+%\newpage
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{学术服务}
+\begin{itemize}
+\item {\bf 会议审稿:} AAAI 2025, ECCV 2024, ICML 2024, ICLR 2024/2025, WACV 2024/2025, NeurIPS 2023/2024, BMVC 2023/2024, MICCAI 2023/2024, ISBI 2023/2024, IPCAI 2022
+
+\item {\bf 期刊审稿}: IJCV, TIP, JBHI, Pattern Recognition Letters, ACM Transactions on Computing for Healthcare, Scientific Reports, Frontiers in Artificial Intelligence, Frontiers in Radiology, IET Computer Vision
+
+\item {\bf 项目委员会}: Distributed, Collaborative and Federated Learning Workshop@MICCAI 2022/2023/2024
+
+\item {\bf 志愿者}: Medical Imaging meets NeurIPs 2022
+
+\item {\bf 会员}: IEEE Student Member, ACM Student Member
+
+\end{itemize}
+\end{rSection}
+
+
+\begin{rSection}{教学情况} 
+{\bf 助教:}
+\vspace{-0.2em}
+\begin{itemize}
+	\item CSCI1110 Problem Solving by Programming, CUHK \hfill{2022年秋季}
+	\item CSCI1030 Hands-On Introduction to Java, CUHK \hfill{2022年春季}
+	\item CSCI3230 Fundamentals of Artificial Intellgence (with Elite-Mirror ESTR 3108), CUHK \hfill{2021年秋季}
+\end{itemize}
+\end{rSection}
+
+
+
+
+
+%\begin{rSection}{Mentoring} 
+%\vspace{-0.2em}
+%\begin{itemize}
+%	\item Daniel Yik Hong Cai (CUHK yr3 undergraduate) \hfill{2021-present}
+%	\item Haonan Bai (CUHK yr1 undergraduate) \hfill{2021-present}
+%\end{itemize}
+%\end{rSection}
+
+
+%\begin{rSection}{ExtraCurricular Activities}
+
+%{\bf \href{http://iseezju.com/}{Zhequ Company, Ltd.}} \hfill{\it Dec. 2019 -- Jun. 2021}\\
+%{\it Technical Staff} \hfill{\it Hangzhou, China}
+
+%{\bf \href{https://zh.wikipedia.org/wiki/CC98\%E8\%AE\%BA\%E5\%9D\%9B}{CC98 Forum, Zhejiang University}} \hfill{\it Mar. 2019 -- Jun. 2021}\\
+%{\it Technical Staff} \hfill{\it Hangzhou, China}
+
+%{\bf \href{https://en.wikipedia.org/wiki/Hangzhou_East_railway_station}{Hangzhou East Railway Station}} \hfill{\it Winter, 2018}\\
+%\it Volunteer} \hfill{\it Hangzhou, China}
+
+%\end{rSection}
+
+
+
+\begin{rSection}{技能}
+
+\begin{itemize}
+    \item {\bf 编程语言:} Python, C/C++, Bash, HTML/CSS
+    \item {\bf 框架\&工具:} PyTorch, \LaTeX, Git
+    \item {\bf 操作系统:} Linux, MacOS, Windows
+\end{itemize}
+
+\end{rSection}
+
+
+\end{document}

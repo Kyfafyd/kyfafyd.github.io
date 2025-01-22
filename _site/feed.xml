@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://127.0.0.1:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T00:54:46-07:00</updated><id>http://127.0.0.1:4000/feed.xml</id><title type="html">Zhao (Dylan) Wang</title><subtitle>personal description</subtitle><author><name>{&quot;avatar&quot;=&gt;&quot;hawaii.jpg&quot;, &quot;bio&quot;=&gt;&quot;at &lt;a href=\&quot;https://maps.app.goo.gl/VZuXhu7VyjtiDcAp6\&quot;&gt;Puʻuhonua o Hōnaunau National Historical Park&lt;/a&gt; in 2024&quot;, &quot;location&quot;=&gt;&quot;Shatin, Hong Kong&quot;, &quot;pubmed&quot;=&gt;nil, &quot;googlescholar&quot;=&gt;&quot;https://scholar.google.com/citations?user=1kEufdwAAAAJ&quot;, &quot;email&quot;=&gt;&quot;zwang@link.cuhk.edu.hk&quot;, &quot;uri&quot;=&gt;nil, &quot;bitbucket&quot;=&gt;nil, &quot;codepen&quot;=&gt;nil, &quot;dribbble&quot;=&gt;nil, &quot;flickr&quot;=&gt;nil, &quot;facebook&quot;=&gt;nil, &quot;foursquare&quot;=&gt;nil, &quot;github&quot;=&gt;&quot;kyfafyd&quot;, &quot;google_plus&quot;=&gt;nil, &quot;keybase&quot;=&gt;nil, &quot;instagram&quot;=&gt;&quot;kyfafyd/&quot;, &quot;impactstory&quot;=&gt;nil, &quot;lastfm&quot;=&gt;nil, &quot;linkedin&quot;=&gt;&quot;kyfafyd&quot;, &quot;pinterest&quot;=&gt;nil, &quot;soundcloud&quot;=&gt;nil, &quot;stackoverflow&quot;=&gt;nil, &quot;steam&quot;=&gt;nil, &quot;tumblr&quot;=&gt;nil, &quot;twitter&quot;=&gt;&quot;kyfafyd&quot;, &quot;vine&quot;=&gt;nil, &quot;weibo&quot;=&gt;nil, &quot;xing&quot;=&gt;nil, &quot;youtube&quot;=&gt;nil, &quot;wikipedia&quot;=&gt;nil, &quot;zhihu&quot;=&gt;nil}</name><email>zwang@link.cuhk.edu.hk</email></author><entry><title type="html">3D CAD for Material Structure Modeling</title><link href="http://127.0.0.1:4000/3dcad/" rel="alternate" type="text/html" title="3D CAD for Material Structure Modeling" /><published>2020-01-04T00:00:00-08:00</published><updated>2020-01-04T00:00:00-08:00</updated><id>http://127.0.0.1:4000/3dcad</id><content type="html" xml:base="http://127.0.0.1:4000/3dcad/">&lt;p&gt;3D CAD software for material structure modeling based on OpenGL and C++&lt;/p&gt;
+
+&lt;!-- **&lt;div style=&quot;font-size:17pt;font-family:Lato&quot;&gt;面向物质结构三维建模的计算机辅助设计&lt;/div&gt;**
+&lt;hr&gt; --&gt;
+
+&lt;h2 id=&quot;preview&quot;&gt;Preview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;display.png&quot; alt=&quot;avatar&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;demodropbox&quot;&gt;Demo(Dropbox)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.dropbox.com/s/vresutkqoxcqehd/moscule1.mp4?dl=0&quot;&gt;Ethylene&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.dropbox.com/s/1j4t8kkhuzyhbz1/moscule2.mp4?dl=0&quot;&gt;Acetaldehyde&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;instruction&quot;&gt;Instruction&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Start interface Click start to start modeling, and click quit to exit the program. After entering the modeling interface, the initial state has two single-bonded atoms in the drawing scene. The user can choose to model on this basis or choose to clear Model from scratch after the screen;&lt;/li&gt;
+  &lt;li&gt;Click the right mouse button to display a right-click menu, which is to clear the screen, add an atom, add a single bond, change the atom size, change the atom map, and zoom in / out. There is also a sidebar on the right side of the interface to implement screenshots. Exit the function of modeling; during the modeling process, you can drag the mouse to observe the modeled molecules from different perspectives, or you can click the left mouse button to select the atom and drag the atom position.&lt;/li&gt;
+  &lt;li&gt;During the modeling process, IJKL button can be used to adjust the position of the light source and WASD button can be used to adjust the position of the angle of view, F button can take a screenshot of the current modeling molecule.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;basic&quot;&gt;Basic&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Construction and splicing of material structure * ball model *&lt;/li&gt;
+  &lt;li&gt;Transformation of club material and transformation of light&lt;/li&gt;
+  &lt;li&gt;Free control of bat size and position&lt;/li&gt;
+  &lt;li&gt;Observation of three-dimensional material geometry (mouse drag)&lt;/li&gt;
+  &lt;li&gt;Zoom In / Zoom Out&lt;/li&gt;
+  &lt;li&gt;Export and save geometry model OBJ file&lt;/li&gt;
+  &lt;li&gt;Screen capture of real-time application window&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;advance&quot;&gt;Advance&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NURBS for double bond connection
+    &lt;ul&gt;
+      &lt;li&gt;The centerline of the soft pipe is a NURBS curve. Coordinates are obtained using the feedback mode, combined with the calculation of the angle between the vectors, and realized by using short cylindrical splicing.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Friendly UI interaction
+    &lt;ul&gt;
+      &lt;li&gt;Right-click menu maintained by GLUT, and sidebar implemented independently&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Complex materials
+    &lt;ul&gt;
+      &lt;li&gt;Pick it with the mouse, select the object with the left button, and switch between different materials with the right-click menu (the picture for this project is the solar system map)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Collision detection&lt;/li&gt;
+  &lt;li&gt;Object expression ability
+    &lt;ul&gt;
+      &lt;li&gt;Use depth, perspective, and other information to achieve occlusion between different objects to further form a combined body&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Liang-ZX/CGproject&quot;&gt;url&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>{&quot;avatar&quot;=&gt;&quot;hawaii.jpg&quot;, &quot;bio&quot;=&gt;&quot;at &lt;a href=\&quot;https://maps.app.goo.gl/VZuXhu7VyjtiDcAp6\&quot;&gt;Puʻuhonua o Hōnaunau National Historical Park&lt;/a&gt; in 2024&quot;, &quot;location&quot;=&gt;&quot;Shatin, Hong Kong&quot;, &quot;pubmed&quot;=&gt;nil, &quot;googlescholar&quot;=&gt;&quot;https://scholar.google.com/citations?user=1kEufdwAAAAJ&quot;, &quot;email&quot;=&gt;&quot;zwang@link.cuhk.edu.hk&quot;, &quot;uri&quot;=&gt;nil, &quot;bitbucket&quot;=&gt;nil, &quot;codepen&quot;=&gt;nil, &quot;dribbble&quot;=&gt;nil, &quot;flickr&quot;=&gt;nil, &quot;facebook&quot;=&gt;nil, &quot;foursquare&quot;=&gt;nil, &quot;github&quot;=&gt;&quot;kyfafyd&quot;, &quot;google_plus&quot;=&gt;nil, &quot;keybase&quot;=&gt;nil, &quot;instagram&quot;=&gt;&quot;kyfafyd/&quot;, &quot;impactstory&quot;=&gt;nil, &quot;lastfm&quot;=&gt;nil, &quot;linkedin&quot;=&gt;&quot;kyfafyd&quot;, &quot;pinterest&quot;=&gt;nil, &quot;soundcloud&quot;=&gt;nil, &quot;stackoverflow&quot;=&gt;nil, &quot;steam&quot;=&gt;nil, &quot;tumblr&quot;=&gt;nil, &quot;twitter&quot;=&gt;&quot;kyfafyd&quot;, &quot;vine&quot;=&gt;nil, &quot;weibo&quot;=&gt;nil, &quot;xing&quot;=&gt;nil, &quot;youtube&quot;=&gt;nil, &quot;wikipedia&quot;=&gt;nil, &quot;zhihu&quot;=&gt;nil}</name><email>zwang@link.cuhk.edu.hk</email></author><summary type="html">3D CAD software for material structure modeling based on OpenGL and C++</summary></entry></feed>
