@@ -12,7 +12,7 @@ title_separator          : "-"
 name                     : &name "Zhao (Dylan) Wang"
 description              : &description "personal description"
 # url                      : http://127.0.0.1:4000
-url                      : https://kyfafyd.wang # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://kyfafyd.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "kyfafyd/academicpage"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
