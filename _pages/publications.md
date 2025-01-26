@@ -109,5 +109,5 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[paper]](https://ieeexplore.ieee.org/document/9194240)
   [[code]](https://github.com/med-air/Contrastive-COVIDNet)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/Contrastive-COVIDNet?style=social">
-  (Ranking 22nd in [Google Scholar Metrics](https://scholar.google.com/citations?hl=en&view_op=list_hcore&venue=L0V86ydYD6YJ.2024&vq=eng_medicalinformatics&cstart=20))
+  (<font color='red'>Ranking 22nd in</font> [<font color='red'>Google Scholar Metrics</font>](https://scholar.google.com/citations?hl=en&view_op=list_hcore&venue=L0V86ydYD6YJ.2024&vq=eng_medicalinformatics&cstart=20))
   <!-- (<font color='red'>Ranking 22nd in [Google Scholar Metrics](https://scholar.google.com/citations?hl=en&view_op=list_hcore&venue=L0V86ydYD6YJ.2024&vq=eng_medicalinformatics&cstart=20)</font>) -->
