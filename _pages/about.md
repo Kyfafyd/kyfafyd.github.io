@@ -16,7 +16,8 @@ Out of research, I have been a technical staff at [CC98 Forum](https://zh.wikipe
 
 ## Research Interests
 
-My research interests lie in **computer vision** and **machine learning**, specifically, aiming to improve the Out-of-Distribution (OoD) generalization ability of deep models. Recently, I am investigating artificial intelligence generated content (AIGC), focusing on video generation.
+My research interests lie in **computer vision** and **machine learning**, specifically, aiming to improve the Out-of-Distribution (OoD) generalization ability of deep models. My research covers video understanding/generation, foundation model pre-training/selection, and applications for healthcare.
+<!-- Recently, I am investigating artificial intelligence generated content (AIGC), focusing on video generation. -->
 
 
 
