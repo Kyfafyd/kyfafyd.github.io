@@ -23,5 +23,4 @@ My research interests lie in **computer vision** and **machine learning**. My re
 
 ## News
 - **[01/2025]** One paper accepted by IEEE JBHI.
-- **[12/2024]** One paper accepted by AAAI 2025.
 - **[12/2024]** Serving as reviewer for ICML 2025.

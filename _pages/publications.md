@@ -34,11 +34,6 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 ## Conference
 
-- Large Images are Gaussians: High-quality Large Image Representation with Levels of 2D Gaussian Splatting. <br/>
-  Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, **Zhao Wang**, Lequan Yu. <br/>
-  *AAAI Conference on Artificial Intelligence* (**AAAI**), 2025. <br/>
-  [[paper]](TBA)
-
 - Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
   Lingting Zhu, **Zhao Wang**, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. <br/>
   *International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop* (**MICCAI EARTH**), 2024. <br/>
