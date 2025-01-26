@@ -34,6 +34,18 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 ## Conference
 
+- Large Images are Gaussians: High-quality Large Image Representation with Levels of 2D Gaussian Splatting. <br/>
+  Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, **Zhao Wang**, Lequan Yu. <br/>
+  *AAAI Conference on Artificial Intelligence* (**AAAI**), 2025. <br/>
+  [[paper]](TBA)
+
+- Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
+  Lingting Zhu, **Zhao Wang**, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. <br/>
+  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop* (**MICCAI EARTH**), 2024. <br/>
+  [[paper]](https://arxiv.org/abs/2401.11535)
+  [[code]](https://github.com/HKU-MedAI/EndoGS)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/EndoGS?style=social">
+
 - Efficient Transferability Assessment for Selection of Pre-trained Detectors. <br/>
   **Zhao Wang**, Aoxue Li, Zhenguo Li, Qi Dou. <br/>
   *IEEE/CVF Winter Conference on Applications of Computer Vision* (**WACV**), 2024. <br/>
@@ -50,14 +62,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[paper]](https://arxiv.org/abs/2306.16741)
   [[code]](https://github.com/med-air/Endo-FM)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/Endo-FM?style=social"> 
-  (<font color='red'>early accept</font>)
-
-- Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
-  Lingting Zhu, **Zhao Wang**, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. <br/>
-  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop* (**MICCAI EARTH**), 2024. <br/>
-  [[paper]](https://arxiv.org/abs/2401.11535)
-  [[code]](https://github.com/HKU-MedAI/EndoGS)
-  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/EndoGS?style=social"> 
+  (<font color='red'>early accept</font>) 
 
 - Federated Learning from Only Unlabeled Data with Class-Conditional-Sharing Clients. <br/>
   Nan Lu, **Zhao Wang**, Xiaoxiao Li, Gang Niu, Qi Dou, Masashi Sugiyama. <br/>
@@ -78,6 +83,13 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 
 ## Journal
+
+- Improving Foundation Model for Endoscopy Video Analysis via Representation Learning on Long Sequences. <br/>
+  **Zhao Wang**, Chang Liu, Lingting Zhu, Tongtong Wang, Shaoting Zhang†, and Qi Dou. <br/>
+  *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2025. <br/>
+  [[paper]](TBA)
+  [[code]](https://github.com/med-air/EndoFM-LV)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/EndoFM-LV?style=social">
 
 - 3DSAM-adapter: Holistic Adaptation of SAM from 2D to 3D for Promptable Medical Image Segmentation. <br/>
   Shizhan Gong, Yuan Zhong, Wenao Ma, Jinpeng Li, **Zhao Wang**, Jingyang Zhang, Pheng-Ann Heng, Qi Dou. <br/>
