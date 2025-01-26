@@ -80,7 +80,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 ## Journal
 
 - Improving Foundation Model for Endoscopy Video Analysis via Representation Learning on Long Sequences. <br/>
-  **Zhao Wang**, Chang Liu, Lingting Zhu, Tongtong Wang, Shaoting Zhang†, and Qi Dou. <br/>
+  **Zhao Wang**, Chang Liu, Lingting Zhu, Tongtong Wang, Shaoting Zhang, and Qi Dou. <br/>
   *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2025. <br/>
   [[paper]](TBA)
   [[code]](https://github.com/med-air/EndoFM-LV)
