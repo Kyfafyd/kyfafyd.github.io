@@ -12,6 +12,14 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 ## Manuscript
 
+- AnyCharV: Bootstrap Controllable Character Video Generation with Fine-to-Coarse Guidance. <br/>
+  **Zhao Wang**\*, Hao Wen\*, Lingting Zhu, Chenming Shang, Yujiu Yang, Qi Dou. <br/>
+  arXiv, 2025. <br/>
+  [[paper]](https://www.arxiv.org/abs/2502.08189)
+  [[project]](https://anycharv.github.io)
+  [[code]](https://github.com/AnyCharV/AnyCharV)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/AnyCharV/AnyCharV?style=social">
+
 - CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects. <br/>
   **Zhao Wang**, Aoxue Li, Lingting Zhu, Yong Guo, Qi Dou, Zhenguo Li. <br/>
   arXiv, 2024. <br/>
@@ -24,6 +32,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[paper]](https://arxiv.org/abs/2406.11253)
   [[project]](https://holistic-motion2d.github.io)
   [[code]](https://github.com/Holistic-Motion2D/Tender)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/Holistic-Motion2D/Tender?style=social">
   [[data]](https://github.com/Holistic-Motion2D/Holistic-Motion2D)
 
 - Grounded Knowledge-Enhanced Medical VLP for Chest X-Ray. <br/>
@@ -33,13 +42,6 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 
 ## Conference
-
-- Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
-  Lingting Zhu, **Zhao Wang**, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. <br/>
-  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop* (**MICCAI EARTH**), 2024. <br/>
-  [[paper]](https://arxiv.org/abs/2401.11535)
-  [[code]](https://github.com/HKU-MedAI/EndoGS)
-  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/EndoGS?style=social">
 
 - Efficient Transferability Assessment for Selection of Pre-trained Detectors. <br/>
   **Zhao Wang**, Aoxue Li, Zhenguo Li, Qi Dou. <br/>
@@ -58,6 +60,20 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[code]](https://github.com/med-air/Endo-FM)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/Endo-FM?style=social"> 
   (<font color='red'>early accept</font>) 
+
+- Large Images are Gaussians: High-quality Large Image Representation with Levels of 2D Gaussian Splatting. <br/>
+  Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, **Zhao Wang**, Lequan Yu. <br/>
+  *The Association for the Advancement of Artificial Intelligence* (**AAAI**), 2025. <br/>
+  [[paper]](https://arxiv.org/abs/2502.09039)
+  [[code]](https://github.com/HKU-MedAI/LIG)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/LIG?style=social">
+
+- Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
+  Lingting Zhu, **Zhao Wang**, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. <br/>
+  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop* (**MICCAI EARTH**), 2024. <br/>
+  [[paper]](https://arxiv.org/abs/2401.11535)
+  [[code]](https://github.com/HKU-MedAI/EndoGS)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/EndoGS?style=social">
 
 - Federated Learning from Only Unlabeled Data with Class-Conditional-Sharing Clients. <br/>
   Nan Lu, **Zhao Wang**, Xiaoxiao Li, Gang Niu, Qi Dou, Masashi Sugiyama. <br/>
@@ -82,7 +98,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 - Improving Foundation Model for Endoscopy Video Analysis via Representation Learning on Long Sequences. <br/>
   **Zhao Wang**, Chang Liu, Lingting Zhu, Tongtong Wang, Shaoting Zhang, and Qi Dou. <br/>
   *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2025. <br/>
-  [[paper]](TBA)
+  [[paper]](https://ieeexplore.ieee.org/abstract/document/10885043)
   [[code]](https://github.com/med-air/EndoFM-LV)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/EndoFM-LV?style=social">
 
