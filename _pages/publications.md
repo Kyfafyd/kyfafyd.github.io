@@ -9,7 +9,8 @@ author_profile: true
 <br/>
 See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAAAAJ)
 
-### 2025
+
+## 2025
 
 - AnyCharV: Bootstrap Controllable Character Video Generation with Fine-to-Coarse Guidance. <br/>
   **Zhao Wang**\*, Hao Wen\*, Lingting Zhu, Chenming Shang, Yujiu Yang, Qi Dou. <br/>
@@ -33,7 +34,8 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[code]](https://github.com/med-air/EndoFM-LV)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/EndoFM-LV?style=social">
 
-### 2024
+
+## 2024
 
 - CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects. <br/>
   **Zhao Wang**, Aoxue Li, Lingting Zhu, Yong Guo, Qi Dou, Zhenguo Li. <br/>
@@ -75,7 +77,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[paper]](https://arxiv.org/abs/2403.09432)
 
 
-### 2023
+## 2023
 
 - Open-Vocabulary Object Detection with Meta Prompt Representation and Instance Contrastive Optimization. <br/>
   **Zhao Wang**, Aoxue Li, Fengwei Zhou, Zhenguo Li, Qi Dou. <br/>
@@ -95,7 +97,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   *Quantitative Imaging in Medicine and Surgery* (**QIMS, IF: 4.63**), 2023. <br/>
   [[paper]](https://qims.amegroups.com/article/view/114391)
 
-### 2022
+## Before 2022
 
 - Federated Learning from Only Unlabeled Data with Class-Conditional-Sharing Clients. <br/>
   Nan Lu, **Zhao Wang**, Xiaoxiao Li, Gang Niu, Qi Dou, Masashi Sugiyama. <br/>
@@ -110,7 +112,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[paper]](https://archive.ismrm.org/2022/3102.html)
 
 
-### 2021
+<!-- ## 2021 -->
 
 - Identification of Bone Marrow Lesions on Magnetic Resonance Imaging with Weakly Supervised Deep Learning. <br/>
   Jiaping Hu\*, **Zhao Wang**\*, Lijie Zhong, Keyan Yu, Yanjun Chen, Yingjie Mei, Qi Dou, Xiaodong Zhang.<br/>
@@ -118,7 +120,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[paper]](https://www.ismrm.org/21/program-files/TeaserSlides/TeasersPresentations/4062-Teaser.html)
 
 
-### 2020
+<!-- ## 2020 -->
 
 - Contrastive Cross-site Learning with Redesigned Net for COVID-19 CT Classification. <br/>
   **Zhao Wang**, Quande Liu, Qi Dou. <br/>
