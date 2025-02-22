@@ -9,8 +9,7 @@ author_profile: true
 <br/>
 See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAAAAJ)
 
-
-## Manuscript
+### 2025
 
 - AnyCharV: Bootstrap Controllable Character Video Generation with Fine-to-Coarse Guidance. <br/>
   **Zhao Wang**\*, Hao Wen\*, Lingting Zhu, Chenming Shang, Yujiu Yang, Qi Dou. <br/>
@@ -19,6 +18,22 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[project]](https://anycharv.github.io)
   [[code]](https://github.com/AnyCharV/AnyCharV)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/AnyCharV/AnyCharV?style=social">
+
+- Large Images are Gaussians: High-quality Large Image Representation with Levels of 2D Gaussian Splatting. <br/>
+  Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, **Zhao Wang**, Lequan Yu. <br/>
+  *The Association for the Advancement of Artificial Intelligence* (**AAAI**), 2025. <br/>
+  [[paper]](https://arxiv.org/abs/2502.09039)
+  [[code]](https://github.com/HKU-MedAI/LIG)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/LIG?style=social">
+
+- Improving Foundation Model for Endoscopy Video Analysis via Representation Learning on Long Sequences. <br/>
+  **Zhao Wang**, Chang Liu, Lingting Zhu, Tongtong Wang, Shaoting Zhang, and Qi Dou. <br/>
+  *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2025. <br/>
+  [[paper]](https://ieeexplore.ieee.org/abstract/document/10885043)
+  [[code]](https://github.com/med-air/EndoFM-LV)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/EndoFM-LV?style=social">
+
+### 2024
 
 - CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects. <br/>
   **Zhao Wang**, Aoxue Li, Lingting Zhu, Yong Guo, Qi Dou, Zhenguo Li. <br/>
@@ -35,18 +50,32 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/Holistic-Motion2D/Tender?style=social">
   [[data]](https://github.com/Holistic-Motion2D/Holistic-Motion2D)
 
+- 3DSAM-adapter: Holistic Adaptation of SAM from 2D to 3D for Promptable Medical Image Segmentation. <br/>
+  Shizhan Gong, Yuan Zhong, Wenao Ma, Jinpeng Li, **Zhao Wang**, Jingyang Zhang, Pheng-Ann Heng, Qi Dou. <br/>
+  *Medical Image Analysis* (**MedIA, IF: 10.7**), 2024. <br/>
+  [[paper]](https://arxiv.org/abs/2306.13465)
+  [[code]](https://github.com/med-air/3DSAM-adapter)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/3DSAM-adapter?style=social"> 
+
 - Grounded Knowledge-Enhanced Medical VLP for Chest X-Ray. <br/>
   Qiao Deng, Zhongzhen Huang, Yunqi Wang, Zhichuan Wang, **Zhao Wang**, Xiaofan Zhang, Qi Dou, YeungYu Hui, Edward Hui. <br/>
   arXiv, 2024. <br/>
   [[paper]](https://arxiv.org/abs/2404.14750)
 
-
-## Conference
+- Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
+  Lingting Zhu, **Zhao Wang**, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. <br/>
+  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop* (**MICCAI EARTH**), 2024. <br/>
+  [[paper]](https://arxiv.org/abs/2401.11535)
+  [[code]](https://github.com/HKU-MedAI/EndoGS)
+  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/EndoGS?style=social">
 
 - Efficient Transferability Assessment for Selection of Pre-trained Detectors. <br/>
   **Zhao Wang**, Aoxue Li, Zhenguo Li, Qi Dou. <br/>
   *IEEE/CVF Winter Conference on Applications of Computer Vision* (**WACV**), 2024. <br/>
   [[paper]](https://arxiv.org/abs/2403.09432)
+
+
+### 2023
 
 - Open-Vocabulary Object Detection with Meta Prompt Representation and Instance Contrastive Optimization. <br/>
   **Zhao Wang**, Aoxue Li, Fengwei Zhou, Zhenguo Li, Qi Dou. <br/>
@@ -61,19 +90,12 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/Endo-FM?style=social"> 
   (<font color='red'>early accept</font>) 
 
-- Large Images are Gaussians: High-quality Large Image Representation with Levels of 2D Gaussian Splatting. <br/>
-  Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, **Zhao Wang**, Lequan Yu. <br/>
-  *The Association for the Advancement of Artificial Intelligence* (**AAAI**), 2025. <br/>
-  [[paper]](https://arxiv.org/abs/2502.09039)
-  [[code]](https://github.com/HKU-MedAI/LIG)
-  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/LIG?style=social">
+- DeepKOA: A Deep-learning Model Predicts Progression in Knee Osteoarthritis Using Multimodal Magnetic Resonance Images from the Osteoarthritis Initiative. <br/>
+  Jiaping Hu, Chuanyang Zheng, Qingling Yu, Lijie Zhong, Keyan Yu, Yanjun Chen, **Zhao Wang**, Bin Zhang, Qi Dou, Xiaodong Zhang. <br/>
+  *Quantitative Imaging in Medicine and Surgery* (**QIMS, IF: 4.63**), 2023. <br/>
+  [[paper]](https://qims.amegroups.com/article/view/114391)
 
-- Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
-  Lingting Zhu, **Zhao Wang**, Jiahao Cui, Zhenchao Jin, Guyin Lin, Lequan Yu. <br/>
-  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Embodied AI and Robotics for Healthcare Workshop* (**MICCAI EARTH**), 2024. <br/>
-  [[paper]](https://arxiv.org/abs/2401.11535)
-  [[code]](https://github.com/HKU-MedAI/EndoGS)
-  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/HKU-MedAI/EndoGS?style=social">
+### 2022
 
 - Federated Learning from Only Unlabeled Data with Class-Conditional-Sharing Clients. <br/>
   Nan Lu, **Zhao Wang**, Xiaoxiao Li, Gang Niu, Qi Dou, Masashi Sugiyama. <br/>
@@ -87,32 +109,16 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   *International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition* (**ISMRM**), 2022. <br/>
   [[paper]](https://archive.ismrm.org/2022/3102.html)
 
+
+### 2021
+
 - Identification of Bone Marrow Lesions on Magnetic Resonance Imaging with Weakly Supervised Deep Learning. <br/>
   Jiaping Hu\*, **Zhao Wang**\*, Lijie Zhong, Keyan Yu, Yanjun Chen, Yingjie Mei, Qi Dou, Xiaodong Zhang.<br/>
   *International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition* (**ISMRM**), 2021. <br/>
   [[paper]](https://www.ismrm.org/21/program-files/TeaserSlides/TeasersPresentations/4062-Teaser.html)
 
 
-## Journal
-
-- Improving Foundation Model for Endoscopy Video Analysis via Representation Learning on Long Sequences. <br/>
-  **Zhao Wang**, Chang Liu, Lingting Zhu, Tongtong Wang, Shaoting Zhang, and Qi Dou. <br/>
-  *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2025. <br/>
-  [[paper]](https://ieeexplore.ieee.org/abstract/document/10885043)
-  [[code]](https://github.com/med-air/EndoFM-LV)
-  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/EndoFM-LV?style=social">
-
-- 3DSAM-adapter: Holistic Adaptation of SAM from 2D to 3D for Promptable Medical Image Segmentation. <br/>
-  Shizhan Gong, Yuan Zhong, Wenao Ma, Jinpeng Li, **Zhao Wang**, Jingyang Zhang, Pheng-Ann Heng, Qi Dou. <br/>
-  *Medical Image Analysis* (**MedIA, IF: 10.7**), 2024. <br/>
-  [[paper]](https://arxiv.org/abs/2306.13465)
-  [[code]](https://github.com/med-air/3DSAM-adapter)
-  <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/3DSAM-adapter?style=social"> 
-
-- DeepKOA: A Deep-learning Model Predicts Progression in Knee Osteoarthritis Using Multimodal Magnetic Resonance Images from the Osteoarthritis Initiative. <br/>
-  Jiaping Hu, Chuanyang Zheng, Qingling Yu, Lijie Zhong, Keyan Yu, Yanjun Chen, **Zhao Wang**, Bin Zhang, Qi Dou, Xiaodong Zhang. <br/>
-  *Quantitative Imaging in Medicine and Surgery* (**QIMS, IF: 4.63**), 2023. <br/>
-  [[paper]](https://qims.amegroups.com/article/view/114391)
+### 2020
 
 - Contrastive Cross-site Learning with Redesigned Net for COVID-19 CT Classification. <br/>
   **Zhao Wang**, Quande Liu, Qi Dou. <br/>
@@ -121,3 +127,37 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[code]](https://github.com/med-air/Contrastive-COVIDNet)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/Contrastive-COVIDNet?style=social">
   (<font color='red'>Ranking 22nd in</font> [<font color='red'>Google Scholar Metrics</font>](https://scholar.google.com/citations?hl=en&view_op=list_hcore&venue=L0V86ydYD6YJ.2024&vq=eng_medicalinformatics&cstart=20))
+
+
+<!-- ## Manuscript -->
+
+
+
+
+
+
+
+
+<!-- ## Conference -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ## Journal -->
+
+
+
+
+
+
+
