@@ -22,6 +22,7 @@ My research interests lie in **computer vision** and **machine learning**. My re
 
 
 ## News
+- **[02/2025]** Serving as reviewer for NeurIPS 2025.
 - **[02/2025]** One paper on controllable character video generation is on [arXiv](https://www.arxiv.org/abs/2502.08189) and [github](https://github.com/AnyCharV/AnyCharV).
 - **[01/2025]** One paper accepted by IEEE JBHI.
 - **[12/2024]** Serving as reviewer for ICML 2025.
