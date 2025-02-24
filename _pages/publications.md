@@ -97,7 +97,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   *Quantitative Imaging in Medicine and Surgery* (**QIMS, IF: 4.63**), 2023. <br/>
   [[paper]](https://qims.amegroups.com/article/view/114391)
 
-## Before 2022
+## Before
 
 - Federated Learning from Only Unlabeled Data with Class-Conditional-Sharing Clients. <br/>
   Nan Lu, **Zhao Wang**, Xiaoxiao Li, Gang Niu, Qi Dou, Masashi Sugiyama. <br/>
@@ -105,6 +105,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[paper]](https://openreview.net/forum?id=WHA8009laxu)
   [[code]](https://github.com/lunanbit/FedUL)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/lunanbit/FedUL?style=social">
+  (<font color='red'>review scores: 8,8,8,6</font>) 
 
 - Predicting Knee Osteoarthritis Progression with a interpretable Deep Learning Approach on Magnetic Resonance Imaging: data from the Osteoarthritis Initiative. <br/>
   Jiaping Hu\*, Chuanyang Zheng\*, Lijie Zhong, Keyan Yu, Yanjun Chen, **Zhao Wang**, Zhongping Zhang, Qi Dou, Xiaodong Zhang. <br/>
