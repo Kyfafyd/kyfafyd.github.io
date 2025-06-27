@@ -14,7 +14,7 @@ I am a final year Ph.D. student in [CSE](http://www.cse.cuhk.edu.hk), [CUHK](htt
 Out of research, I have been a technical staff at [CC98 Forum](https://zh.wikipedia.org/wiki/CC98%E8%AE%BA%E5%9D%9B), maintaining the community when he was an undergraduate. Besides, I served as a student volunteer at [Hangzhou East Railway Station](https://en.wikipedia.org/wiki/Hangzhou_East_railway_station), providing services to passengers during winter in 2018. 
 
 
-<font color='red'>I am currently on job market, please kindly reach out if you think I would be a good fit. My latest CV can be found [here](resume/CV-ZhaoWang.pdf). Thank you!</font>
+<font color='red'>I am currently on job market, please kindly reach out if you think I would be a good fit. My latest CV can be found</font> [here](resume/CV-ZhaoWang.pdf)<font color='red'>. Thank you!</font>
 
 
 ## Research Interests
