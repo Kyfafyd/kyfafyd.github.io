@@ -34,6 +34,10 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[code]](https://github.com/med-air/EndoFM-LV)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/EndoFM-LV?style=social">
 
+- HiEndo: Harnessing Large-Scale Data for Generating High-resolution Laparoscopy Videos under a Two-Stage Framework. <br/>
+  **Zhao Wang**\*, Yeqian Zhang\*, Jiayi Gu\*, Yueyao Chen, Yonghao Long, Xiang Xia, Puhua Zhang, Chunchao Zhu, Zerui Wang, Qi Dou, Zheng Wang, Zizhen Zhang. <br/>
+  *Computer Assisted Surgery* (**CAS, IF: 3.0**), 2025. <br/>
+
 
 ## 2024
 
@@ -130,37 +134,4 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[code]](https://github.com/med-air/Contrastive-COVIDNet)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/Contrastive-COVIDNet?style=social">
   (<font color='red'>Ranking 22nd in</font> [<font color='red'>Google Scholar Metrics</font>](https://scholar.google.com/citations?hl=en&view_op=list_hcore&venue=L0V86ydYD6YJ.2024&vq=eng_medicalinformatics&cstart=20))
-
-
-<!-- ## Manuscript -->
-
-
-
-
-
-
-
-
-<!-- ## Conference -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ## Journal -->
-
-
-
-
-
-
 
