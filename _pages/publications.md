@@ -115,22 +115,6 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/lunanbit/FedUL?style=social">
   (<font color='red'>review scores: 8,8,8,6</font>) 
 
-<!-- - Predicting Knee Osteoarthritis Progression with a interpretable Deep Learning Approach on Magnetic Resonance Imaging: data from the Osteoarthritis Initiative. <br/>
-  Jiaping Hu\*, Chuanyang Zheng\*, Lijie Zhong, Keyan Yu, Yanjun Chen, **Zhao Wang**, Zhongping Zhang, Qi Dou, Xiaodong Zhang. <br/>
-  *International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition* (**ISMRM**), 2022. <br/>
-  [[paper]](https://archive.ismrm.org/2022/3102.html) -->
-
-
-<!-- ## 2021 -->
-
-<!-- - Identification of Bone Marrow Lesions on Magnetic Resonance Imaging with Weakly Supervised Deep Learning. <br/>
-  Jiaping Hu\*, **Zhao Wang**\*, Lijie Zhong, Keyan Yu, Yanjun Chen, Yingjie Mei, Qi Dou, Xiaodong Zhang.<br/>
-  *International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition* (**ISMRM**), 2021. <br/>
-  [[paper]](https://www.ismrm.org/21/program-files/TeaserSlides/TeasersPresentations/4062-Teaser.html) -->
-
-
-<!-- ## 2020 -->
-
 - Contrastive Cross-site Learning with Redesigned Net for COVID-19 CT Classification. <br/>
   **Zhao Wang**, Quande Liu, Qi Dou. <br/>
   *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2020. <br/>

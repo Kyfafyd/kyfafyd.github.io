@@ -9,7 +9,7 @@ redirect_from:
 ## Professional Services
 
 ### Conference Reviewer:
-- Conference on Neural Information Processing Systems (NeurIPS), 2023, 2024, 2025
+- Conference on Neural Information Processing Systems (NeurIPS), 2023 -- 2025
 - International Conference on Learning Representations (ICLR), 2024, 2025
 - International Conference on Machine Learning (ICML), 2024, 2025
 - IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026
@@ -17,7 +17,7 @@ redirect_from:
 - International Conference on Artificial Intelligence and Statistics (AISTATS), 2025
 - IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2024, 2025
 - European Conference on Computer Vision (ECCV), 2024
-- British Machine Vision Conference (BMVC), 2023, 2024
+- British Machine Vision Conference (BMVC), 2023, 2024, 2025
 - International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2023, 2024
 - International Symposium on Biomedical Imaging (ISBI), 2023, 2024
 - International Conference on Information Processing in Computer-Assisted Interventions (IPCAI), 2022
@@ -35,7 +35,7 @@ redirect_from:
 - IET Computer Vision
 
 ### Program Committee:
-- Distributed, Collaborative and Federated Learning Workshop@MICCAI, 2022, 2023
+- Distributed, Collaborative and Federated Learning Workshop@MICCAI, 2022
 
 ### Volunteer Helper:
 - Medical Imaging meets NeurIPS, 2022
