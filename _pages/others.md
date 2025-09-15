@@ -12,6 +12,7 @@ redirect_from:
 - Conference on Neural Information Processing Systems (NeurIPS), 2023, 2024, 2025
 - International Conference on Learning Representations (ICLR), 2024, 2025
 - International Conference on Machine Learning (ICML), 2024, 2025
+- IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026
 - AAAI Conference on Artificial Intelligence (AAAI), 2025
 - International Conference on Artificial Intelligence and Statistics (AISTATS), 2025
 - IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2024, 2025
@@ -49,7 +50,7 @@ redirect_from:
 - CSCI3230 Fundamentals of Artificial Intellgence (with Elite-Mirror ESTR3108), CUHK, Fall 2021 (TA)
 
 ## Contact
-- **Address:**  Rm 1024, Ho Sin-Hang Engineering Building, CUHK, Shatin, HK
+- **Address:**  Rm 121, Ho Sin-Hang Engineering Building, CUHK, Shatin, HK
 - **Email:** [zwang@link.cuhk.edu.hk](mailto:zwang@link.cuhk.edu.hk) 
 
 

@@ -12,13 +12,17 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 ## 2025
 
-- AnyCharV: Bootstrap Controllable Character Video Generation with Fine-to-Coarse Guidance. <br/>
+- AnyHumanV: Bootstrap Controllable Human Video Generation with Fine-to-Coarse Guidance. <br/>
   **Zhao Wang**\*, Hao Wen\*, Lingting Zhu, Chenming Shang, Yujiu Yang, Qi Dou. <br/>
   arXiv, 2025. <br/>
   [[paper]](https://www.arxiv.org/abs/2502.08189)
   [[project]](https://anycharv.github.io)
   [[code]](https://github.com/AnyCharV/AnyCharV)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/AnyCharV/AnyCharV?style=social">
+
+- A Unified 3D Cardiac Structure Segmentation Framework for Heterogeneous Medical Data. <br/>
+  **Zhao Wang**, Zheyao Gao, Qi Dou. <br/>
+  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Comprehensive Analysis & Computing of Real-world Medical Images Workshop* (**MICCAI CARE**), 2025.
 
 - Large Images are Gaussians: High-quality Large Image Representation with Levels of 2D Gaussian Splatting. <br/>
   Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, **Zhao Wang**, Lequan Yu. <br/>
@@ -111,18 +115,18 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/lunanbit/FedUL?style=social">
   (<font color='red'>review scores: 8,8,8,6</font>) 
 
-- Predicting Knee Osteoarthritis Progression with a interpretable Deep Learning Approach on Magnetic Resonance Imaging: data from the Osteoarthritis Initiative. <br/>
+<!-- - Predicting Knee Osteoarthritis Progression with a interpretable Deep Learning Approach on Magnetic Resonance Imaging: data from the Osteoarthritis Initiative. <br/>
   Jiaping Hu\*, Chuanyang Zheng\*, Lijie Zhong, Keyan Yu, Yanjun Chen, **Zhao Wang**, Zhongping Zhang, Qi Dou, Xiaodong Zhang. <br/>
   *International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition* (**ISMRM**), 2022. <br/>
-  [[paper]](https://archive.ismrm.org/2022/3102.html)
+  [[paper]](https://archive.ismrm.org/2022/3102.html) -->
 
 
 <!-- ## 2021 -->
 
-- Identification of Bone Marrow Lesions on Magnetic Resonance Imaging with Weakly Supervised Deep Learning. <br/>
+<!-- - Identification of Bone Marrow Lesions on Magnetic Resonance Imaging with Weakly Supervised Deep Learning. <br/>
   Jiaping Hu\*, **Zhao Wang**\*, Lijie Zhong, Keyan Yu, Yanjun Chen, Yingjie Mei, Qi Dou, Xiaodong Zhang.<br/>
   *International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition* (**ISMRM**), 2021. <br/>
-  [[paper]](https://www.ismrm.org/21/program-files/TeaserSlides/TeasersPresentations/4062-Teaser.html)
+  [[paper]](https://www.ismrm.org/21/program-files/TeaserSlides/TeasersPresentations/4062-Teaser.html) -->
 
 
 <!-- ## 2020 -->
