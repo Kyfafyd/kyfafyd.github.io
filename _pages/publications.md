@@ -33,14 +33,14 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 - Improving Foundation Model for Endoscopy Video Analysis via Representation Learning on Long Sequences. <br/>
   **Zhao Wang**, Chang Liu, Lingting Zhu, Tongtong Wang, Shaoting Zhang, and Qi Dou. <br/>
-  *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2025. <br/>
+  *IEEE Journal of Biomedical and Health Informatics* (**JBHI, SCI Q1, IF: 7.7**), 2025. <br/>
   [[paper]](https://ieeexplore.ieee.org/abstract/document/10885043)
   [[code]](https://github.com/med-air/EndoFM-LV)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/EndoFM-LV?style=social">
 
 - HiEndo: Harnessing Large-Scale Data for Generating High-resolution Laparoscopy Videos under a Two-Stage Framework. <br/>
   **Zhao Wang**\*, Yeqian Zhang\*, Jiayi Gu\*, Yueyao Chen, Yonghao Long, Xiang Xia, Puhua Zhang, Chunchao Zhu, Zerui Wang, Qi Dou, Zheng Wang, Zizhen Zhang. <br/>
-  *Computer Assisted Surgery* (**CAS, IF: 3.0**), 2025. <br/>
+  *Computer Assisted Surgery* (**CAS, SCI Q2, IF: 3.0**), 2025. <br/>
 
 
 ## 2024
@@ -69,7 +69,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 - Grounded Knowledge-Enhanced Medical VLP for Chest X-Ray. <br/>
   Qiao Deng, Zhongzhen Huang, Yunqi Wang, Zhichuan Wang, **Zhao Wang**, Xiaofan Zhang, Qi Dou, YeungYu Hui, Edward Hui. <br/>
-  arXiv, 2024. <br/>
+  *Biomedical Signal Processing and Control* (**BSPC, SCI Q2, IF: 4.9**), 2024. <br/>
   [[paper]](https://arxiv.org/abs/2404.14750)
 
 - Deformable Endoscopic Tissues Reconstruction with Gaussian Splatting. <br/>
@@ -102,7 +102,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 - DeepKOA: A Deep-learning Model Predicts Progression in Knee Osteoarthritis Using Multimodal Magnetic Resonance Images from the Osteoarthritis Initiative. <br/>
   Jiaping Hu, Chuanyang Zheng, Qingling Yu, Lijie Zhong, Keyan Yu, Yanjun Chen, **Zhao Wang**, Bin Zhang, Qi Dou, Xiaodong Zhang. <br/>
-  *Quantitative Imaging in Medicine and Surgery* (**QIMS, IF: 4.63**), 2023. <br/>
+  *Quantitative Imaging in Medicine and Surgery* (**QIMS, SCI Q2, IF: 4.63**), 2023. <br/>
   [[paper]](https://qims.amegroups.com/article/view/114391)
 
 ## Before
@@ -117,7 +117,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 - Contrastive Cross-site Learning with Redesigned Net for COVID-19 CT Classification. <br/>
   **Zhao Wang**, Quande Liu, Qi Dou. <br/>
-  *IEEE Journal of Biomedical and Health Informatics* (**JBHI, IF: 7.7**), 2020. <br/>
+  *IEEE Journal of Biomedical and Health Informatics* (**JBHI, SCI Q1, IF: 7.7**), 2020. <br/>
   [[paper]](https://ieeexplore.ieee.org/document/9194240)
   [[code]](https://github.com/med-air/Contrastive-COVIDNet)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/med-air/Contrastive-COVIDNet?style=social">
