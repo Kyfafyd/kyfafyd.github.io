@@ -13,7 +13,7 @@ redirect_from:
 - International Conference on Learning Representations (ICLR), 2024 -- 2025
 - International Conference on Machine Learning (ICML), 2024 -- 2025
 - IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026
-- AAAI Conference on Artificial Intelligence (AAAI), 2025
+- AAAI Conference on Artificial Intelligence (AAAI), 2025 -- 2026
 - International Conference on Artificial Intelligence and Statistics (AISTATS), 2025 -- 2026
 - IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2024 -- 2025
 - European Conference on Computer Vision (ECCV), 2024
