@@ -41,8 +41,7 @@ redirect_from:
 - Medical Imaging meets NeurIPS, 2022
 
 ### Membership:
-- IEEE Student Member
-- ACM Student Member
+- IEEE Member
 
 ## Teaching
 - CSCI1110 Problem Solving by Programming, CUHK, Fall 2022 (TA)
