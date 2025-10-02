@@ -22,7 +22,7 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 - A Unified 3D Cardiac Structure Segmentation Framework for Heterogeneous Medical Data. <br/>
   **Zhao Wang**, Zheyao Gao, Qi Dou. <br/>
-  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Comprehensive Analysis & Computing of Real-world Medical Images Workshop* (**MICCAI CARE**), 2025.
+  *International Conference on Medical Image Computing and Computer-Assisted Intervention, Comprehensive Analysis & Computing of Real-world Medical Images Workshop* (**MICCAI CARE**), 2025. (<font color='red'>Best Paper Award</font>) 
 
 - Large Images are Gaussians: High-quality Large Image Representation with Levels of 2D Gaussian Splatting. <br/>
   Lingting Zhu, Guying Lin, Jinnan Chen, Xinjie Zhang, Zhenchao Jin, **Zhao Wang**, Lequan Yu. <br/>

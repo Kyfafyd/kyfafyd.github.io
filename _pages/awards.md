@@ -7,6 +7,7 @@ author_profile: true
 
 
 <!-- ## Undergraduate -->
+- Best Paper Award, MICCAI CARE, 2025
 - Postgraduate Studentship, CUHK, 2021-2025
 - The Outstanding Undergraduate Thesis Award, ZJU, 2021
 - The Outstanding Graduates Award, ZJU, 2021
