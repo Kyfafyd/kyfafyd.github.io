@@ -21,6 +21,7 @@ My research interests lie in **computer vision** and **machine learning**. My re
 
 
 ## News
+- **[10/2025]** One paper on customized video generation is accepted by IEEE TMM.
 - **[09/2025]** Serving as reviewer for CVPR 2026, AAAI 2026.
 - **[09/2025]** One paper is accepted by MICCAI CARE 2026 as oral and awarded as Best Paper.
 - **[05/2025]** One paper on high-resolution laparoscopy video generation is accepted by Computer Assisted Surgery.

@@ -20,6 +20,12 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   [[code]](https://github.com/AnyCharV/AnyCharV)
   <img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/AnyCharV/AnyCharV?style=social">
 
+- CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects. <br/>
+  **Zhao Wang**, Aoxue Li, Lingting Zhu, Yong Guo, Qi Dou, Zhenguo Li. <br/>
+  *IEEE Transactions on Multimedia* (**TMM, SCI Q1, IF: 9.7**), 2025. <br/>
+  [[paper]](https://arxiv.org/abs/2401.09962)
+  [[project]](https://kyfafyd.wang/projects/customvideo)
+
 - A Unified 3D Cardiac Structure Segmentation Framework for Heterogeneous Medical Data. <br/>
   **Zhao Wang**, Zheyao Gao, Qi Dou. <br/>
   *International Conference on Medical Image Computing and Computer-Assisted Intervention, Comprehensive Analysis & Computing of Real-world Medical Images Workshop* (**MICCAI CARE**), 2025. (<font color='red'>Best Paper Award</font>) 
@@ -44,12 +50,6 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 
 
 ## 2024
-
-- CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects. <br/>
-  **Zhao Wang**, Aoxue Li, Lingting Zhu, Yong Guo, Qi Dou, Zhenguo Li. <br/>
-  arXiv, 2024. <br/>
-  [[paper]](https://arxiv.org/abs/2401.09962)
-  [[project]](https://kyfafyd.wang/projects/customvideo)
 
 - Holistic-Motion2D: Scalable Whole-body Human Motion Generation in 2D Space. <br/>
   Yuan Wang\*, **Zhao Wang**\*, Junhao Gong\*, Di Huang, Tong He, Wanli Ouyang, Jile Jiao, Xuetao Feng, Qi Dou, Shixiang Tang, Dan Xu. <br/>
