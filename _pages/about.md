@@ -15,7 +15,7 @@ I was very lucky to do research with Prof. [Nenggan Zheng](https://person.zju.ed
 Out of research, I have been a technical staff at [CC98 Forum](https://zh.wikipedia.org/wiki/CC98%E8%AE%BA%E5%9D%9B), maintaining the community when he was an undergraduate. Besides, I served as a student volunteer at [Hangzhou East Railway Station](https://en.wikipedia.org/wiki/Hangzhou_East_railway_station), providing services to passengers during winter in 2018. 
 
 
-**I am always open and eager to any forms of research cooperation and discussion.Feel free to contact me if you share the same interest in multimodal perception and generation!**
+**I am always open and eager to any forms of research cooperation and discussion. Feel free to contact me if you share the same interest in multimodal perception and generation!**
 
 
 ## Research Interests
