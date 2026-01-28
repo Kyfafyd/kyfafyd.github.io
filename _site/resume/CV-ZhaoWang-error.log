@@ -1,8 +1,0 @@
-return {
- ["filename"]="/Users/wangzhao/Desktop/Personal/mypage/kyfafyd.github.io/resume/CV-ZhaoWang.tex",
- ["lastcontext"]="\nl.5 \\documentclass\n                 [a4paper]{resume} % Use the custom resume.cls style",
- ["lastluaerror"]="?",
- ["lasttexerror"]="! Undefined control sequence",
- ["linenumber"]=5,
- ["offset"]=10,
-}

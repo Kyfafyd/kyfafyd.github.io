@@ -16,7 +16,7 @@ redirect_from:
 - AAAI Conference on Artificial Intelligence (AAAI), 2025 -- 2026
 - International Conference on Artificial Intelligence and Statistics (AISTATS), 2025 -- 2026
 - IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2024 -- 2025
-- European Conference on Computer Vision (ECCV), 2024
+- European Conference on Computer Vision (ECCV), 2024 -- 2026
 - British Machine Vision Conference (BMVC), 2023 -- 2025
 - International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2023 -- 2024
 - International Symposium on Biomedical Imaging (ISBI), 2023 -- 2024

@@ -73,9 +73,9 @@
                 <a href="https://kyfafyd.wang" target="_blank">Zhao Wang</a><sup>1</sup>,</span>
                 <span class="author-block">
                   <a href="" target="_blank">Aoxue Li</a><sup>2</sup>,</span>
-                  <span class="author-block">
+                  <!-- <span class="author-block">
                     <a href="https://xieenze.github.io" target="_blank">Enze Xie</a><sup>2</sup>,
-                  </span>
+                  </span> -->
                   <span class="author-block">
                     <a href="https://scholar.google.com/citations?user=TPD_P98AAAAJ" target="_blank">Lingting Zhu</a><sup>3</sup>,
                   </span>
@@ -172,23 +172,47 @@
 
 
 
+<!-- Teaser video-->
+<section class="hero teaser is-light" align="center">
+  <div class="container is-max-desktop">
+    <br>
+    <h2 class="title is-3">Overview of Comparison and Generated Videos</h2>
+    
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="videos/demo.mp4"
+        type="video/mp4">
+      </video>
+      <!-- <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2> -->
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
 
-<section class="hero is-small">
+
+
+
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
+
+      
+
       <div id="results-carousel" class="carousel results-carousel" align="center">
 
         <div class="item item-video1">
 
-          <img src="videos/results/cat_dog/cat.jpg" alt="MY ALT TEXT" width="222px"/>
-          <img src="videos/results/cat_dog/dog.jpg" alt="MY ALT TEXT" width="222px"/>
+
+          <img src="videos/results/cat_dog_1/cat.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/cat_dog_1/dog.jpg" alt="MY ALT TEXT" width="222px"/>
 
           &nbsp;&nbsp;&nbsp;&nbsp;
 
-           <!-- Add caption element for each video preload="auto"-->
           <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
-            <!-- Your video preload="auto"file here -->
-            <source src="videos/results/cat_dog/highres.mp4"
+            <source src="videos/results/cat_dog_1/highres.mp4"
             type="video/mp4">
           </video>
 
@@ -196,22 +220,20 @@
 
           
         </div>
-
+        
         <div class="item item-video2">
           
-          <img src="videos/results/man_sunglasses/man.jpg" alt="MY ALT TEXT" width="222px"/>
-          <img src="videos/results/man_sunglasses/sunglasses.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/anime_guitar/anime.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/anime_guitar/guitar.png" alt="MY ALT TEXT" width="222px"/>
 
           &nbsp;&nbsp;&nbsp;&nbsp;
 
-           <!-- Add caption element for each video preload="auto"-->
           <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
-            <!-- Your video preload="auto"file here -->
-            <source src="videos/results/man_sunglasses/highres.mp4"
+            <source src="videos/results/anime_guitar/highres.mp4"
             type="video/mp4">
           </video>
 
-          <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">man*</font> wearing a <font color="#C00000">sunglasses*</font>, giving a speech at square, 4K, high resolution</h3><br>
+          <h3 align="center" style="font-family:Bradley Hand">an <font color="#548235">anime character*</font> playing a <font color="#C00000">guitar*</font> in front of Tower Bridge</h3><br>
 
           
         </div>
@@ -219,19 +241,17 @@
         <div class="item item-video3">
           
 
-          <img src="videos/results/toy_bear_bike/toy_bear.jpg" alt="MY ALT TEXT" width="222px"/>
-          <img src="videos/results/toy_bear_bike/bike.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/bear_bike/bear.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/bear_bike/bike.jpg" alt="MY ALT TEXT" width="222px"/>
 
           &nbsp;&nbsp;&nbsp;&nbsp;
 
-           <!-- Add caption element for each video preload="auto"-->
           <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
-            <!-- Your video preload="auto"file here -->
-            <source src="videos/results/toy_bear_bike/highres.mp4"
+            <source src="videos/results/bear_bike/highres.mp4"
             type="video/mp4">
           </video>
 
-          <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">toy bear*</font> riding a <font color="#C00000">bike*</font> on the road, with mountains faraway in the background</h3><br>
+          <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">toy bear*</font> riding a <font color="#C00000">bike*</font> on the beach</h3><br>
           
         </div>
 
@@ -243,9 +263,7 @@
 
           &nbsp;&nbsp;&nbsp;&nbsp;
 
-           <!-- Add caption element for each video preload="auto"-->
           <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
-            <!-- Your video preload="auto"file here -->
             <source src="videos/results/woodenpot_flower/highres.mp4"
             type="video/mp4">
           </video>
@@ -253,15 +271,21 @@
           <h3 align="center" style="font-family:Bradley Hand">a front view of a <font color="#548235">woodenpot*</font> with a <font color="#C00000">flower*</font> in it on beach with a view of seashore</h3><br>
           
         </div>
+
+
+        
         
         
 
 
       </div>
-      <p>Customized text-to-video generation results of our proposed CustomVideo with given multiple subjects and text prompts. Our approach can disentangle highly similar subjects, e.g., cat v.s. dog, preserving the fidelity of subjects and smooth motions.</p>
+      <p>Customized text-to-video generation results of our proposed CustomVideo with given multiple subjects (left) and text prompts (below). Our approach can disentangle highly similar subjects, \eg, \emph{cat} v.s. \emph{dog}, simultaneously preserving the fidelity of subjects and smooth motions.</p>
     </div>
   </div>
-</section>
+</section> -->
+
+
+
 
 
 <br>
@@ -279,14 +303,14 @@
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Customized text-to-video generation aims to generate high-quality videos guided by text prompts and subject references. Current approaches designed for single subjects suffer from tackling multiple subjects, which is a more challenging and practical scenario. In this work, we aim to promote multi-subject guided text-to-video customization. We propose CustomVideo, a novel framework that can generate identity-preserving videos with the guidance of multiple subjects. To be specific, firstly, we encourage the co-occurrence of multiple subjects via composing them in a single image. Further, upon a basic text-to-video diffusion model, we design a simple yet effective attention control strategy to disentangle different subjects in the latent space of diffusion model. Moreover, to help the model focus on the specific object area, we segment the object from given reference images and provide a corresponding object mask for attention learning. Also, we collect a multi-subject text-to-video generation dataset as a comprehensive benchmark, with 69 individual subjects and 57 meaningful pairs. Extensive qualitative, quantitative, and user study results demonstrate the superiority of our method, compared with the previous state-of-the-art approaches.
+            Customized text-to-video generation aims to generate high-quality videos guided by text prompts and subject references. Current approaches designed for single subjects suffer from tackling multiple subjects, which is a more challenging and practical scenario. In this work, we aim to promote multi-subject guided text-to-video customization. We propose CustomVideo, a novel framework that can generate identity-preserving videos with the guidance of multiple subjects. To be specific, firstly, we encourage the co-occurrence of multiple subjects via composing them in a single image. Further, upon a basic text-to-video diffusion model, we design a simple yet effective attention control strategy to disentangle different subjects in the latent space of diffusion model. Moreover, to help the model focus on the specific object area, we segment the object from given reference images and provide a corresponding object mask for attention learning. Also, we collect a multi-subject text-to-video generation dataset as a comprehensive benchmark, with 63 individual subjects from 13 different categories and 68 meaningful pairs. Extensive qualitative, quantitative, and user study results demonstrate the superiority of our method, compared with the previous state-of-the-art approaches. 
           </p>
         </div>
       </div>
@@ -296,7 +320,7 @@
 <!-- End paper abstract -->
 
 <!-- Paper poster -->
-<section class="hero is-small">
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -375,11 +399,14 @@
         <div>
           <td colspan="3"><img src="pics/framework.png" alt="" width="1000" /></td>
         </div>
-      <p>We propose a simple yet effective co-occurrence and attention control mechanism with mask guidance to preserve the the fidelity of subjects for multi-subject driven text-to-video generation. During the training stage, only the key and value weights in the cross attention layers are fine-tuned. In the inference stage, given a text prompt integrated with learned text token, we can easily obtain high-quality videos with specific subjects. </p>
+      <p>We propose a simple yet effective co-occurrence and attention control mechanism with mask guidance to preserve the the fidelity of subjects for multi-subject driven text-to-video generation. During the training stage, only the key and value weights in the cross-attention layers are fine-tuned, together with a learnable word token for every subject. In the inference stage, given a text prompt integrated with learned word tokens, we can easily obtain high-quality videos with specific subjects. </p>
       </div>
       </div>
   </section>
 <!--End paper poster -->
+
+
+
 
 <!-- Video grid -->
 <!-- <section class="hero is-light">
@@ -449,15 +476,20 @@
 </section> -->
 <!-- End video preload="auto"grid -->
 
+
+
+
+
+
 <!-- video preload="auto"carousel -->
-<section class="hero is-small is-light">
+<section class="hero is-small">
   <div class="hero-body">
-    <div class="container is-max-desktop">
+    <!-- <div class="container is-max-desktop"> -->
       <div class="columns is-centered has-text-centered">
         <div class="column custom-width">
-          <h2 class="title is-3">Comparisons</h2>
+          <h2 class="title is-3">Comparison with SOTA</h2>
           <div class="content has-text-justified" align="center">
-            <div class="caption-container" style="width: 1130px; padding-left: 100px">
+            <!-- <div class="caption-container" style="width: 1130px; padding-left: 0px">
               <div class="caption">
                 <p>Subject1</p>
               </div>
@@ -473,43 +505,87 @@
               <div class="caption">
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustomDiffusion <a href="#customdiffusion">[2]</a></p>
               </div>
-              <div class="caption">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VideoDreamer <a href="#videodreamer">[3]</a></p>
-              </div>
               
-              <!-- Add remaining captions here  -->
-            </div>
+
+            </div> -->
       <div id="results-carousel" class="carousel results-carousel" align="center">
         <div class="item item-video1">
 
 
-          <img src="videos/compare/cat_dog/cat.jpg" alt="MY ALT TEXT" width="111px"/>
-          
-          <img src="videos/compare/cat_dog/dog.jpg" alt="MY ALT TEXT" width="111px"/>
 
+          <div class="caption-container" style="width: 950px; padding-left: 0px">
+            <div class="caption">
+              <p><font color="#548235">cat*</font></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;CustomVideo</p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DreamBooth<a href="#dreambooth">[1]</a></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustomDiffusion<a href="#customdiffusion">[2]</a></p>
+            </div>
+          </div>
+
+
+          <img src="videos/compare/cat_dog/cat.jpg" alt="MY ALT TEXT" width="166.5px"/>
+          
           &nbsp;&nbsp;&nbsp;&nbsp;
 
            <!-- Add caption element for each video preload="auto"-->
-          <video preload="auto"poster="" id="video11" autoplay controls muted loop width="200px">
+          <video preload="auto"poster="" id="video11" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/cat_dog/CustomVideo/lowres.mp4"
             type="video/mp4">
           </video>
-          <video preload="auto"poster="" id="video12" autoplay controls muted loop width="200px">
+          <video preload="auto"poster="" id="video12" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/cat_dog/DreamBooth/lowres.mp4"
             type="video/mp4">
           </video>
-          
-          <video preload="auto"poster="" id="video13" autoplay controls muted loop width="200px">
+          <video preload="auto"poster="" id="video13" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/cat_dog/CustomDiffusion/lowres.mp4"
             type="video/mp4">
           </video>
+
+          <!-- <br> -->
+
+          <div class="caption-container" style="width: 950px; padding-left: 0px">
+            <div class="caption">
+              <p><font color="#C00000">dog*</font></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VideoDreamer<a href="#videodreamer">[3]</a></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisenDiff<a href="#disendiff">[4]</a>+SVD-XT<a href="#svd">[5]</a></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DreamVideo<a href="#dreamvideo">[6]</a></p>
+            </div>
+          </div>
+
+          <!-- <br> -->
+
+          <img src="videos/compare/cat_dog/dog.jpg" alt="MY ALT TEXT" width="166.5px"/>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
           
-          <video preload="auto"poster="" id="video14" autoplay controls muted loop width="200px">
+          <video preload="auto"poster="" id="video14" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/cat_dog/VideoDreamer/lowres.mp4"
+            type="video/mp4">
+          </video>
+          <video preload="auto"poster="" id="video14" autoplay controls muted loop width="300px">
+            <!-- Your video preload="auto"file here -->
+            <source src="videos/compare/cat_dog/disendiff_svd/lowres.mp4"
+            type="video/mp4">
+          </video>
+          <video preload="auto"poster="" id="video14" autoplay controls muted loop width="300px">
+            <!-- Your video preload="auto"file here -->
+            <source src="videos/compare/cat_dog/dreamvideo/lowres.mp4"
             type="video/mp4">
           </video>
 
@@ -521,33 +597,79 @@
 
         
         <div class="item item-video2">
-          <img src="videos/compare/car_barn/car.jpg" alt="MY ALT TEXT" width="111px"/>
-          
-          <img src="videos/compare/car_barn/barn.jpg" alt="MY ALT TEXT" width="111px"/>
 
+
+          <div class="caption-container" style="width: 950px; padding-left: 0px">
+            <div class="caption">
+              <p><font color="#548235">car*</font></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;CustomVideo</p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DreamBooth<a href="#dreambooth">[1]</a></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustomDiffusion<a href="#customdiffusion">[2]</a></p>
+            </div>
+          </div>
+
+
+          <img src="videos/compare/car_barn/car.jpg" alt="MY ALT TEXT" width="166.5px"/>
+          
           &nbsp;&nbsp;&nbsp;&nbsp;
 
            <!-- Add caption element for each video preload="auto"-->
-          <video preload="auto"poster="" id="video11" autoplay controls muted loop width="200px">
+          <video preload="auto"poster="" id="video11" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/car_barn/CustomVideo/lowres.mp4"
             type="video/mp4">
           </video>
-          <video preload="auto"poster="" id="video12" autoplay controls muted loop width="200px">
+          <video preload="auto"poster="" id="video12" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/car_barn/DreamBooth/lowres.mp4"
             type="video/mp4">
           </video>
-          
-          <video preload="auto"poster="" id="video13" autoplay controls muted loop width="200px">
+          <video preload="auto"poster="" id="video13" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/car_barn/CustomDiffusion/lowres.mp4"
             type="video/mp4">
           </video>
+
+
+          <div class="caption-container" style="width: 950px; padding-left: 0px">
+            <div class="caption">
+              <p><font color="#C00000">barn*</font></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VideoDreamer<a href="#videodreamer">[3]</a></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisenDiff<a href="#disendiff">[4]</a>+SVD-XT<a href="#svd">[5]</a></p>
+            </div>
+            <div class="caption">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DreamVideo<a href="#dreamvideo">[6]</a></p>
+            </div>
+          </div>
           
-          <video preload="auto"poster="" id="video14" autoplay controls muted loop width="200px">
+
+          <img src="videos/compare/car_barn/barn.jpg" alt="MY ALT TEXT" width="166.5px"/>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+          <video preload="auto"poster="" id="video14" autoplay controls muted loop width="300px">
             <!-- Your video preload="auto"file here -->
             <source src="videos/compare/car_barn/VideoDreamer/lowres.mp4"
+            type="video/mp4">
+          </video>
+          <video preload="auto"poster="" id="video12" autoplay controls muted loop width="300px">
+            <!-- Your video preload="auto"file here -->
+            <source src="videos/compare/car_barn/disendiff_svd/lowres.mp4"
+            type="video/mp4">
+          </video>
+          <video preload="auto"poster="" id="video13" autoplay controls muted loop width="300px">
+            <!-- Your video preload="auto"file here -->
+            <source src="videos/compare/car_barn/dreamvideo/lowres.mp4"
             type="video/mp4">
           </video>
 
@@ -563,57 +685,295 @@
 
       </div>
       
-    </div>
+
+
+    <!-- </div> -->
   </div>
 </section>
 <!-- End video preload="auto"carousel -->
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>
-@article{wang2024customvideo,
-  title={CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects},
-  author={Wang, Zhao and Li, Aoxue and Xie, Enze and Zhu, Lingting and Guo, Yong and Dou, Qi and Li, Zhenguo},
-  journal={arXiv preprint arXiv:2401.09962},
-  year={2024}
-}
-    </code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
 
+
+<!-- Video carousel -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      
+    <div class="container">
+      
+      <h2  align="center" class="title is-3">Two-subject T2V Customization</h2>
+      <div id="results-carousel" class="carousel results-carousel" align="center">
+        <!-- <div class="content has-text-justified" align="center"> -->
+
+
+
+          <div class="item item-video1">
+
+
+            <img src="videos/results/cat_dog_1/cat.jpg" alt="MY ALT TEXT" width="222px"/>
+            <img src="videos/results/cat_dog_1/dog.jpg" alt="MY ALT TEXT" width="222px"/>
+  
+            &nbsp;&nbsp;&nbsp;&nbsp;
+  
+            <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
+              <source src="videos/results/cat_dog_1/highres.mp4"
+              type="video/mp4">
+            </video>
+  
+            <p align="center" style="font-family:Bradley Hand">a <font color="#548235">cat*</font> and a <font color="#C00000">dog*</font> walking in the Times Square</p><br>
+  
+            
+          </div>
+          
+          <div class="item item-video2">
+            
+            <img src="videos/results/anime_guitar/anime.jpg" alt="MY ALT TEXT" width="222px"/>
+            <img src="videos/results/anime_guitar/guitar.png" alt="MY ALT TEXT" width="222px"/>
+  
+            &nbsp;&nbsp;&nbsp;&nbsp;
+  
+            <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
+              <source src="videos/results/anime_guitar/highres.mp4"
+              type="video/mp4">
+            </video>
+  
+            <h3 align="center" style="font-family:Bradley Hand">an <font color="#548235">anime character*</font> playing a <font color="#C00000">guitar*</font> in front of Tower Bridge</h3><br>
+  
+            
+          </div>
+  
+          <div class="item item-video3">
+            
+  
+            <img src="videos/results/bear_bike/bear.jpg" alt="MY ALT TEXT" width="222px"/>
+            <img src="videos/results/bear_bike/bike.jpg" alt="MY ALT TEXT" width="222px"/>
+  
+            &nbsp;&nbsp;&nbsp;&nbsp;
+  
+            <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
+              <source src="videos/results/bear_bike/highres.mp4"
+              type="video/mp4">
+            </video>
+  
+            <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">toy bear*</font> riding a <font color="#C00000">bike*</font> on the beach</h3><br>
+            
+          </div>
+  
+          <div class="item item-video4">
+            
+  
+            <img src="videos/results/woodenpot_flower/woodenpot.jpg" alt="MY ALT TEXT" width="222px"/>
+            <img src="videos/results/woodenpot_flower/flower.jpg" alt="MY ALT TEXT" width="222px"/>
+  
+            &nbsp;&nbsp;&nbsp;&nbsp;
+  
+            <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
+              <source src="videos/results/woodenpot_flower/highres.mp4"
+              type="video/mp4">
+            </video>
+  
+            <h3 align="center" style="font-family:Bradley Hand">a front view of a <font color="#548235">woodenpot*</font> with a <font color="#C00000">flower*</font> in it on beach with a view of seashore</h3><br>
+            
+          </div>
+
+
+        <div class="item item-video5">
+          
+          <img src="videos/results/cat_dog_2/cat.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/cat_dog_2/dog.jpg" alt="MY ALT TEXT" width="222px"/>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+           <!-- Add caption element for each video preload="auto"-->
+          <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
+            <!-- Your video preload="auto"file here -->
+            <source src="videos/results/cat_dog_2/highres.mp4"
+            type="video/mp4">
+          </video>
+
+          <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">cat*</font> playing with a <font color="#C00000">dog*</font></h3><br>
+
+          
+        </div>
+
+        <div class="item item-video6">
+          
+
+          <img src="videos/results/sofa_lamp/sofa.png" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/sofa_lamp/lamp.jpg" alt="MY ALT TEXT" width="222px"/>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+           <!-- Add caption element for each video preload="auto"-->
+          <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
+            <!-- Your video preload="auto"file here -->
+            <source src="videos/results/sofa_lamp/highres.mp4"
+            type="video/mp4">
+          </video>
+
+          <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">lamp*</font> shining on a <font color="#C00000">sofa*</font></h3><br>
+          
+        </div>
+
+
+        <div class="item item-video3">
+          
+
+          <img src="videos/results/monster_motorbike/monster.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/monster_motorbike/motorbike.png" alt="MY ALT TEXT" width="222px"/>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+           <!-- Add caption element for each video preload="auto"-->
+          <video preload="auto" poster="" id="video11" autoplay controls muted loop width="400px">
+            <!-- Your video preload="auto"file here -->
+            <source src="videos/results/monster_motorbike/highres.mp4"
+            type="video/mp4">
+          </video>
+
+          <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">monster*</font> and a <font color="#C00000">motorbike*</font> on the beach with a view of seashore</h3><br>
+          
+        </div>
+
+
+        <!-- <p align="center">Generated videos from our CustomVideo with two subjects.</p> -->
+
+      <!-- </div> -->
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+<!-- Video carousel -->
 <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2  align="center" class="title is-3">Three-subject T2V Customization</h2>
+      <div id="results-carousel" class="carousel results-carousel" align="center">
+        
+        <div class="item item-video1">
+          
+
+          <img src="videos/results/cat_sunglasses_lighthouse/cat.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/cat_sunglasses_lighthouse/sunglasses.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/cat_sunglasses_lighthouse/lighthouse.jpg" alt="MY ALT TEXT" width="222px"/>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+          <video preload="auto" poster="" id="video333" autoplay controls muted loop width="400px">
+            <source src="videos/results/cat_sunglasses_lighthouse/lowres.mp4"
+            type="video/mp4">
+          </video>
+
+          <h3 align="center" style="font-family:Bradley Hand">a <font color="#548235">cat*</font> sitting on the grass, wearing <font color="#C00000">sunglasses*</font>, with a <font color="#9240D1">lighthouse*</font> in the background</h3><br>
+          
+        </div>
+
+
+        <div class="item item-video2">
+          
+
+          <img src="videos/results/dog_sunglasses_pyramid/dog.jpg" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/dog_sunglasses_pyramid/sunglasses.png" alt="MY ALT TEXT" width="222px"/>
+          <img src="videos/results/dog_sunglasses_pyramid/pyramid.jpg" alt="MY ALT TEXT" width="222px"/>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+          <video preload="auto" poster="" id="video444" autoplay controls muted loop width="400px">
+            <source src="videos/results/dog_sunglasses_pyramid/highres.mp4"
+            type="video/mp4">
+          </video>
+
+          <h3 align="center" style="font-family:Bradley Hand">with a <font color="#9240D1">pyramid*</font> in the background, a <font color="#548235">dog*</font> sitting on the grass, wearing <font color="#C00000">sunglasses*</font></h3><br>
+          
+        </div>
+
+
+        <!-- <p align="center">Generated videos from our CustomVideo with three subjects.</p> -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column custom-width">
-          <!-- <h2 class="title is-3"></h2> -->
+          <h2 class="title is-3">References</h2>
           <div class="content has-text-justified">
   <p>
     <a name="dreambooth" id="dreambooth"></a>
-    [1] Ruiz, Nataniel, Yuanzhen Li, Varun Jampani, Yael Pritch, Michael Rubinstein, and Kfir Aberman. "Dreambooth: Fine tuning text-to-image diffusion models for subject-driven generation." CVPR, 2023.
+    [1] Nataniel Ruiz, Yuanzhen Li, Varun Jampani, Yael Pritch, Michael Rubinstein, and Kfir Aberman. Dreambooth: Fine tuning text-to-image diffusion models for subject-driven generation CVPR, 2023.
   </p>
   <p>
     <a name="customdiffusion" id="customdiffusion"></a>
-    [2] Kumari, Nupur, Bingliang Zhang, Richard Zhang, Eli Shechtman, and Jun-Yan Zhu. "Multi-concept customization of text-to-image diffusion." CVPR, 2023.
+    [2] Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, and Jun-Yan Zhu. Multi-concept customization of text-to-image diffusion CVPR, 2023.
   </p>
   <p>
     <a name="videodreamer" id="videodreamer"></a>
-    [3] Chen, Hong, Xin Wang, Guanning Zeng, Yipeng Zhang, Yuwei Zhou, Feilin Han, and Wenwu Zhu. "Videodreamer: Customized multi-subject text-to-video generation with disen-mix finetuning." arXiv preprint arXiv:2311.00990, 2023.
+    [3] Hong Chen, Xin Wang, Guanning Zeng, Yipeng Zhang, Yuwei Zhou, Feilin Han, and Wenwu Zhu. Videodreamer: Customized multi-subject text-to-video generation with disen-mix finetuning. arXiv, 2023.
+  </p>
+  <p>
+    <a name="disendiff" id="disendiff"></a>
+    [4] Yanbing Zhang, Mengping Yang, Qin Zhou, and Zhe Wang. Attention calibration for disentangled text-to-image personalization. CVPR, 2024
+  </p>
+  <p>
+    <a name="svd" id="svd"></a>
+    [5] Andreas Blattmann, Tim Dockhorn, Sumith Kulal, Daniel Mendelevitch, Maciej Kilian, Dominik Lorenz, Yam Levi, Zion English, Vikram Voleti, Adam Letts, Varun Jampani, and Robin Rombach. Stable video diffusion: Scaling latent video diffusion models to large datasets. CVPR, 2024.
+  </p>
+  <p>
+    <a name="dreamvideo" id="dreamvideo"></a>
+    [6] Yujie Wei, Shiwei Zhang, Zhiwu Qing, Hangjie Yuan, Zhiheng Liu, Yu Liu, Yingya Zhang, Jingren Zhou, and Hongming Shan. Dreamvideo: Composing your dream videos with customized subject and motion. CVPR, 2024.
   </p>
   
   </div>
         </div>
       </div>
     </div>  
+
+  </section>
+
+
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+@article{wang2024customvideo,
+  title={CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects},
+  author={Wang, Zhao and Li, Aoxue and Zhu, Lingting and Guo, Yong and Dou, Qi and Li, Zhenguo},
+  journal={arXiv preprint arXiv:2401.09962},
+  year={2024}
+}
+    </code></pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+
+    <!-- <br>
+    <br> -->
+
+
   <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
 
+          
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
             <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative

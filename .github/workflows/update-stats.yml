@@ -1,0 +1,58 @@
+name: Update Google Scholar Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # 每周日更新
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: pip install scholarly
+        
+      - name: Update stats
+        run: |
+          python << 'EOF'
+          from scholarly import scholarly
+          import json
+          import sys
+          
+          # 替换为你的 Google Scholar ID
+          SCHOLAR_ID = "1kEufdwAAAAJ"
+          
+          try:
+              author = scholarly.search_author_id(SCHOLAR_ID)
+              author = scholarly.fill(author)
+              cites = author['citedby']
+              
+              data = {
+                  "schemaVersion": 1,
+                  "label": "citations",
+                  "message": str(cites),
+                  "color": "9cf"
+              }
+              
+              with open('gs_data_shieldsio.json', 'w') as f:
+                  json.dump(data, f, indent=2)
+              print(f"Updated citations: {cites}")
+          except Exception as e:
+              print(f"Error: {e}")
+              sys.exit(1)
+          EOF
+          
+      - name: Commit and push
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add gs_data_shieldsio.json
+          git commit -m "Update Google Scholar stats" || exit 0
+          git push
