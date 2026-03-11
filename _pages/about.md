@@ -9,18 +9,19 @@ redirect_from:
 ---
 
 
-I obtained my Ph.D. degree at [CSE](http://www.cse.cuhk.edu.hk), [CUHK](http://www.cuhk.edu.hk), supervised by Prof. [Qi Dou](http://www.cse.cuhk.edu.hk/~qdou) with dissertation committee Prof. [Farzan Farnia](https://www.cse.cuhk.edu.hk/~farnia), Prof. [Liwei Wang](https://lwwangcse.github.io), and Prof. [Nenggan Zheng](https://person.zju.edu.cn/en/nengganzheng). Before that, I received my B.Eng. degree at [ISEE](http://www.isee.zju.edu.cn/iseenglish), [ZJU](http://www.zju.edu.cn/english) in 2021, supervised by Prof. [Honggang Zhang](https://person.zju.edu.cn/en/honggangzhang). 
-In the past, I was very lucky to work with Prof. [Zhenguo Li](https://person.zju.edu.cn/en/nengganzheng) (HKUST), Prof. [Shaoting Zhang](http://www.qingyuan.sjtu.edu.cn/a/Shaoting-Zhang.html) (SJTU), [Xiaoxiao Li](https://xxlya.github.io) (UBC) and Prof. [Wanli Ouyang](https://wlouyang.github.io) (Shanghai AI Lab). 
+I am a senior researcher in Alibaba Group as [Top Talent T-star](https://talent.taotian.com/star/home). 
+Before joining Alibaba Group, I obtained my Ph.D. degree at [CSE](http://www.cse.cuhk.edu.hk), [CUHK](http://www.cuhk.edu.hk), supervised by Prof. [Qi Dou](http://www.cse.cuhk.edu.hk/~qdou), and B.Eng. degree at [ISEE](http://www.isee.zju.edu.cn/iseenglish), [ZJU](http://www.zju.edu.cn/english) in 2021, supervised by Prof. [Honggang Zhang](https://person.zju.edu.cn/en/honggangzhang). 
+In the past, I was very lucky to work at Shanghai AI Lab, Huawei Noah Ark's Lab, and Sensetime. My research fmainly lie in generative AI and computer vision. Recently, I am working on large-scale video generation and post training.
 
 <!-- Out of research, I have been a technical staff at [CC98 Forum](https://zh.wikipedia.org/wiki/CC98%E8%AE%BA%E5%9D%9B), maintaining the community when he was an undergraduate. Besides, I served as a student volunteer at [Hangzhou East Railway Station](https://en.wikipedia.org/wiki/Hangzhou_East_railway_station), providing services to passengers during winter in 2018.  -->
 
 
-**I am always open and eager to any forms of research/project cooperation and discussion. Feel free to contact me via email if you share the same interest in multimodal generation/perception!**
+**Our team is hiring full-time researchers and interns to work on AIGC-related topics, including but not limited to video/image generation and editing. Feel free to contact me via email if you are passionate about the above areas! Any form of project collaboration is also welcome!**
 
 
-## Research Interests
+<!-- ## Research Interests
 
-My research interests mainly lie in **generative AI** and **computer vision**. My research covers video/motion generation, model pre-training/selection, and visual recognition.
+My research interests mainly lie in **generative AI** and **computer vision**. My research covers video/motion generation, model pre-training/selection, and visual recognition. -->
 
 
 ## News
