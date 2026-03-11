@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-I am a senior researcher in Alibaba Group as [Top Talent T-star](https://talent.taotian.com/star/home). 
+I am a senior researcher in Alibaba Group as [Top Talent T-Star](https://talent.taotian.com/star/home). 
 Before joining Alibaba Group, I obtained my Ph.D. degree at [CSE](http://www.cse.cuhk.edu.hk), [CUHK](http://www.cuhk.edu.hk), supervised by Prof. [Qi Dou](http://www.cse.cuhk.edu.hk/~qdou), and B.Eng. degree at [ISEE](http://www.isee.zju.edu.cn/iseenglish), [ZJU](http://www.zju.edu.cn/english) in 2021, supervised by Prof. [Honggang Zhang](https://person.zju.edu.cn/en/honggangzhang). 
 In the past, I was very lucky to work at Shanghai AI Lab, Huawei Noah Ark's Lab, and Sensetime. My research fmainly lie in generative AI and computer vision. Recently, I am working on large-scale video generation and post training.
 
