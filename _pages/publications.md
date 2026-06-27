@@ -8,8 +8,8 @@ author_profile: true
 
 
 <br/>
-See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAAAAJ) 
-<!-- See <img src="https://img.shields.io/badge/dynamic/json?logo=google-scholar&label=citations&query=citations&url=https://scholar.googleusercontent.com/citations?user=1kEufdwAAAAJ&hl=en&color=9cf"> -->
+<!-- See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAAAAJ)  -->
+See <img alt="Google Scholar citations" src="https://img.shields.io/endpoint?logo=google-scholar&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2FKyfafyd%2Fkyfafyd.github.io%2Fmaster%2Fgs_data_shieldsio.json">
 
 
 ## 2025
