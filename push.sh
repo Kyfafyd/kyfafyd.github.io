@@ -1,25 +1,46 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-# The shell environment may point git at a local proxy (e.g. Clash on :7890)
-# that is not always running. Fall back to a direct connection when the proxy
-# port is not accepting connections, otherwise git fails before reaching GitHub.
-proxy_host_port=""
+# The exported proxy variables can go stale when the proxy client changes port,
+# so try them first, then the port macOS is actually configured to use, then a
+# direct connection. Without this git spends its whole timeout on a dead port.
+reachable() {
+  nc -z -G 2 "$1" "$2" 2>/dev/null
+}
+
+use_proxy() {
+  export http_proxy="http://$1:$2" https_proxy="http://$1:$2" all_proxy="http://$1:$2"
+  export HTTP_PROXY="$http_proxy" HTTPS_PROXY="$https_proxy" ALL_PROXY="$all_proxy"
+}
+
+env_host="" env_port=""
 for var in https_proxy HTTPS_PROXY http_proxy HTTP_PROXY all_proxy ALL_PROXY; do
   value="${!var:-}"
   if [ -n "$value" ]; then
-    proxy_host_port="${value#*://}"
-    proxy_host_port="${proxy_host_port%%/*}"
+    value="${value#*://}"
+    value="${value%%/*}"
+    env_host="${value%:*}"
+    env_port="${value##*:}"
     break
   fi
 done
 
-if [ -n "$proxy_host_port" ]; then
-  proxy_host="${proxy_host_port%:*}"
-  proxy_port="${proxy_host_port##*:}"
-  if ! nc -z -G 2 "$proxy_host" "$proxy_port" 2>/dev/null; then
-    echo "push.sh: proxy $proxy_host:$proxy_port unreachable, pushing without proxy"
-    unset https_proxy HTTPS_PROXY http_proxy HTTP_PROXY all_proxy ALL_PROXY
+sys_host=$(scutil --proxy | awk '/HTTPProxy/ {print $3}')
+sys_port=$(scutil --proxy | awk '/HTTPPort/ {print $3}')
+
+if [ -n "$env_host" ] && reachable "$env_host" "$env_port"; then
+  echo "push.sh: using proxy $env_host:$env_port"
+elif [ -n "$sys_host" ] && reachable "$sys_host" "$sys_port"; then
+  echo "push.sh: proxy $env_host:$env_port unreachable, using system proxy $sys_host:$sys_port"
+  use_proxy "$sys_host" "$sys_port"
+else
+  echo "push.sh: no working proxy, trying a direct connection"
+  unset https_proxy HTTPS_PROXY http_proxy HTTP_PROXY all_proxy ALL_PROXY
+  # git 2.39 has no connect timeout knob, so probe here instead of letting the
+  # push stall for 75s when GitHub is blocked on a direct connection.
+  if ! reachable github.com 443; then
+    echo "push.sh: github.com:443 unreachable and no proxy is running; start your proxy and retry" >&2
+    exit 1
   fi
 fi
 
