@@ -1,0 +1,535 @@
+/* FMG project page
+   ------------------------------------------------------------------
+   The renders have a light checkerboard floor and a violet body, so the
+   page is dark: a light video card reads as a lit panel against it, and
+   the body colour can be reused as the accent without fighting the art. */
+
+:root {
+  --bg:        #fbfbfd;
+  --bg-alt:    #f4f5f8;
+  --panel:     #ffffff;
+  --panel-2:   #f7f8fa;
+  --line:      #e4e6ec;
+  --line-2:    #d3d7e0;
+  --ink:       #14161c;
+  --ink-dim:   #4d5361;
+  --ink-faint: #858b9a;
+
+  /* Pulled down from the render palette: the body violet and the renderer's
+     teal both need darkening to carry on white. */
+  --accent:    #7c3aed;
+  --accent-2:  #0891b2;
+  --accent-dim:#6d28d9;
+  --accent-wash: #7c3aed12;
+
+  --shadow:    0 1px 2px rgba(16,18,28,.05), 0 8px 24px -14px rgba(16,18,28,.18);
+  --shadow-lg: 0 2px 6px rgba(16,18,28,.06), 0 28px 60px -32px rgba(16,18,28,.30);
+
+  --r:    14px;
+  --r-sm: 9px;
+  --nav:  62px;
+
+  /* Content width, adaptive rather than a fixed number.
+     A pure vw width is wrong at both ends: on a small screen it leaves
+     margins where the content should be using the glass, and on a large one
+     it runs the prose to unreadable line lengths. So the column is the
+     smaller of "the window minus its gutters" and "a base that grows slowly
+     with the screen". Small screens therefore fill, and large screens keep
+     growing without ever going fully fluid.
+         650px -> 610    1280px -> 942    1920px -> 1082
+        1024px -> 885    1440px -> 977    2560px -> 1223 */
+  --gutter: 40px;
+  --wrap:   calc(660px + 22vw);
+  --wrap-narrow: calc(520px + 12vw);
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav) + 16px); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, video { max-width: 100%; display: block; }
+em { color: var(--ink); font-style: italic; }
+b  { color: var(--ink); font-weight: 650; }
+i  { font-style: normal; }
+
+.wrap { width: min(calc(100% - var(--gutter)), var(--wrap)); margin-inline: auto; }
+.wrap.narrow { width: min(calc(100% - var(--gutter)), var(--wrap-narrow)); }
+
+/* ── nav ─────────────────────────────────────────────────────────── */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 80; height: var(--nav);
+  background: rgba(251,251,253,.82);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease), background .3s var(--ease);
+}
+.nav.stuck { border-bottom-color: var(--line); box-shadow: 0 1px 16px -8px rgba(16,18,28,.28); }
+.nav-inner {
+  width: min(calc(100% - var(--gutter)), var(--wrap)); margin-inline: auto; height: 100%;
+  display: flex; align-items: center; gap: 28px;
+}
+.brand { text-decoration: none; }
+.brand-mark {
+  font-weight: 800; letter-spacing: .14em; font-size: 15px;
+  background: linear-gradient(92deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.nav-links { display: flex; gap: 22px; margin-left: auto; }
+.nav-links a {
+  color: var(--ink-dim); text-decoration: none; font-size: 13.5px;
+  font-weight: 500; position: relative; padding: 4px 0;
+  transition: color .2s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.active { color: var(--accent); }
+.nav-links a.active::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+.nav-progress {
+  position: absolute; left: 0; bottom: -1px; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width .1s linear;
+}
+.nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; margin-left: auto; }
+.nav-toggle span { display: block; width: 21px; height: 2px; background: var(--ink); margin: 4px 0; border-radius: 2px; transition: .25s var(--ease); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ── hero ────────────────────────────────────────────────────────── */
+.hero { position: relative; padding: calc(var(--nav) + 62px) 0 72px; overflow: hidden; }
+.hero-glow {
+  position: absolute; top: -340px; left: 50%; translate: -50% 0;
+  width: 1100px; height: 700px; pointer-events: none;
+  background:
+    radial-gradient(closest-side, rgba(124,58,237,.10), transparent 72%),
+    radial-gradient(closest-side, rgba(8,145,178,.08), transparent 70%);
+  background-position: 30% 40%, 72% 55%;
+  background-repeat: no-repeat;
+  background-size: 68% 100%, 62% 92%;
+  filter: blur(12px);
+}
+.hero .wrap { position: relative; text-align: center; }
+
+.badge {
+  display: inline-block; padding: 5px 13px; border-radius: 999px;
+  border: 1px solid var(--line-2); background: var(--panel);
+  color: var(--ink-dim); font-size: 11.5px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(30px, 4.6vw, 48px); line-height: 1.12; font-weight: 800;
+  letter-spacing: -.028em; margin: 0 0 22px;
+}
+.title-mark {
+  display: block; font-size: .42em; letter-spacing: .3em; margin-bottom: 14px;
+  background: linear-gradient(92deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.authors { margin: 0 0 6px; font-size: 17px; font-weight: 600; color: var(--ink); }
+.au { display: inline-block; margin: 0 11px; white-space: nowrap; }
+.au sup { color: var(--accent); font-size: .72em; }
+.au a { color: inherit; text-decoration: none; transition: color .2s var(--ease); }
+.au a:hover { color: var(--accent); }
+.affil { margin: 0 0 26px; color: var(--ink-dim); font-size: 15px; }
+.affil a { color: inherit; text-decoration: none; transition: color .2s var(--ease); }
+.affil a:hover, .au a:hover { color: var(--accent); }
+.affil .legend {
+  display: block; margin-top: 5px; color: var(--ink-faint); font-size: 12.8px;
+}
+.affil .legend sup { color: var(--accent); }
+.tldr {
+  max-width: 660px; margin: 0 auto 34px; color: var(--ink-dim);
+  font-size: 16.8px; line-height: 1.7;
+}
+
+.cta { display: flex; flex-wrap: wrap; gap: 11px; justify-content: center; margin-bottom: 54px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 19px; border-radius: 999px;
+  border: 1px solid var(--line-2); background: var(--panel); box-shadow: var(--shadow);
+  color: var(--ink); text-decoration: none; font-size: 14.5px; font-weight: 600;
+  transition: .22s var(--ease);
+}
+.btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.btn:hover { background: var(--panel-2); border-color: var(--line-2); transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-primary {
+  background: linear-gradient(96deg, var(--accent-dim), var(--accent));
+  border-color: transparent; color: #fff;
+}
+.btn-primary svg { fill: rgba(255,255,255,.14); }
+.btn-primary:hover { filter: brightness(1.1); }
+
+/* The clip is 4:3, so at full column width it dominates the first screen.
+   Held to three-quarters and centred, with the caption tracking it. */
+.hero-video { margin: 0 auto 52px; max-width: 74%; }
+.hero-video video {
+  width: 100%; border-radius: var(--r); border: 1px solid var(--line);
+  background: var(--panel); box-shadow: var(--shadow-lg);
+}
+figcaption {
+  margin-top: 13px; color: var(--ink-faint); font-size: 13.8px; line-height: 1.62;
+  text-align: left;
+}
+
+.stats {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  padding: 26px 0; border-block: 1px solid var(--line);
+}
+.stat { text-align: center; }
+.stat-n {
+  display: block; font-size: clamp(21px, 2.6vw, 31px); font-weight: 800;
+  letter-spacing: -.02em;
+  background: linear-gradient(92deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+.stat-n i { font-size: .62em; }
+.stat-l { display: block; color: var(--ink-faint); font-size: 12.5px; margin-top: 3px; }
+
+/* ── sections ────────────────────────────────────────────────────── */
+.sec { padding: 84px 0; }
+.sec.alt { background: var(--bg-alt); border-block: 1px solid var(--line); }
+
+.h2 {
+  font-size: clamp(24px, 2.9vw, 31px); font-weight: 800; letter-spacing: -.024em;
+  margin: 0 0 34px; display: flex; align-items: baseline; gap: 15px;
+}
+.h2-num {
+  font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 500;
+  color: var(--accent); opacity: .75; letter-spacing: .08em;
+}
+.lead { font-size: 17.5px; color: var(--ink); }
+.sub { color: var(--ink-dim); margin: -16px 0 34px; }
+.note { color: var(--ink-faint); font-size: 13.8px; }
+p { margin: 0 0 17px; color: var(--ink-dim); }
+.narrow p { color: var(--ink-dim); }
+
+.fig { margin: 0; }
+.fig img, .fig video {
+  width: 100%; border-radius: var(--r); border: 1px solid var(--line);
+  background: #fff;
+}
+.fig.wide { margin-top: 40px; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+
+/* The prose here is short, so the clip gets the larger share of the row. */
+#longseq .split { grid-template-columns: 0.72fr 1.28fr; gap: 36px; align-items: center; }
+
+/* One clip at a time, so a 4:3 render is not shrunk to share the column. */
+.slider.one-up .slider-track {
+  scroll-snap-type: x mandatory; gap: 0; padding: 0;
+  /* the rail is the clip, so nothing should peek past its rounded corner */
+  border-radius: var(--r); overflow-x: auto; overflow-y: hidden;
+}
+.slider.one-up .slider-track > * { flex: 0 0 100%; scroll-snap-align: start; }
+/* No caption under these clips, so the video carries the full radius. */
+.slider.one-up .slide video { border-radius: var(--r); display: block; }
+
+/* Arrows sit *on* the clip rather than straddling its edge: at this column
+   width there is no room outside it, and half-on looked like a mistake. */
+.slider.one-up .arrow {
+  top: calc(var(--media-h, 60%) / 2 - 21px);
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(6px);
+  border-color: rgba(20,22,28,.10);
+}
+.slider.one-up .arrow.prev { left: 10px; }
+.slider.one-up .arrow.next { right: 10px; }
+.slider.one-up .arrow:hover { background: #fff; }
+
+.dots { display: flex; gap: 7px; justify-content: center; margin-top: 14px; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%; padding: 0; cursor: pointer;
+  border: 0; background: var(--line-2); transition: .22s var(--ease);
+}
+.dot[aria-current="true"] { background: var(--accent); width: 20px; border-radius: 4px; }
+/* Radar takes leftover width; the table sizes to its columns instead of
+   stretching and dumping extra space between Group and Params. */
+#results .split {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 36px;
+  align-items: center;
+}
+#results .fig img { width: 100%; max-width: none; }
+#results .table-wrap { width: max-content; max-width: 100%; }
+#results .table-wrap .note { width: 0; min-width: 100%; }
+
+.split.rev { align-items: start; }
+.split.rev > *:first-child { padding-top: 4px; }
+
+/* method cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(198px, 1fr)); gap: 14px; margin-top: 36px; }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 24px 22px; transition: .25s var(--ease); position: relative; overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity: 0; transition: opacity .25s var(--ease);
+}
+.card:hover { transform: translateY(-3px); border-color: var(--line-2); box-shadow: var(--shadow-lg); }
+.card:hover::before { opacity: 1; }
+.card-n {
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px; color: var(--accent);
+  opacity: .8; margin-bottom: 11px; letter-spacing: .1em;
+}
+.card h3 { margin: 0 0 9px; font-size: 16.5px; font-weight: 700; letter-spacing: -.012em; }
+.card p { margin: 0; font-size: 14.4px; line-height: 1.66; }
+
+/* table */
+.table-wrap { overflow-x: auto; }
+.tbl {
+  width: auto; border-collapse: collapse;
+  font-size: 13px; font-variant-numeric: tabular-nums;
+}
+.tbl th, .tbl td {
+  padding: 8px 8px; white-space: nowrap;
+  border-bottom: 1px solid var(--line);
+}
+.tbl th {
+  text-align: right; color: var(--ink-faint);
+  font-weight: 600; font-size: 12.2px;
+}
+.tbl td { text-align: right; color: var(--ink-dim); }
+.tbl th:first-child, .tbl td:first-child { text-align: left; padding-left: 12px; }
+.tbl th:last-child, .tbl td:last-child {
+  padding-right: 0; padding-left: 12px;
+  border-left: 1px solid var(--line);
+}
+.tbl tbody tr:hover td { background: var(--panel-2); }
+.tbl .ours td { color: var(--ink); font-weight: 600; background: var(--accent-wash); }
+.tbl .ours td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+.tbl .best { color: var(--accent); font-weight: 700; }
+.tbl .venue, .tbl thead th:nth-child(2) { text-align: left; }
+.tbl .venue { font-size: 11.6px; color: var(--ink-faint); }
+.tbl td a {
+  color: inherit; text-decoration: none;
+  transition: color .2s var(--ease);
+}
+.tbl td a:hover { color: var(--accent); }
+/* ── comparison ──────────────────────────────────────────────────── */
+.tabs { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 20px; }
+.tab {
+  padding: 9px 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--panel);
+  color: var(--ink-dim); font-size: 13.6px; font-weight: 500;
+  font-family: inherit; transition: .2s var(--ease); text-align: left;
+}
+.tab:hover { color: var(--ink); border-color: var(--line-2); }
+.tab[aria-selected="true"] {
+  background: linear-gradient(96deg, var(--accent-dim), var(--accent));
+  border-color: transparent; color: #fff; font-weight: 600;
+}
+
+.prompt-line {
+  margin: 0 0 16px; font-size: 16.5px; color: var(--ink);
+  padding-left: 13px; border-left: 3px solid var(--accent);
+}
+.prompt-line::before, .prompt-line::after { content: "\201C"; color: var(--ink-faint); }
+.prompt-line::after { content: "\201D"; }
+
+.cmp-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.ctrl {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+  padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--ink-dim);
+  font-size: 13px; font-weight: 600; font-family: inherit; transition: .2s var(--ease);
+}
+.ctrl:hover { color: var(--ink); border-color: var(--line-2); }
+.ctrl svg { width: 13px; height: 13px; fill: currentColor; stroke: none; }
+.ic-play { display: none; }
+.cmp-bar.paused .ic-play { display: block; }
+.cmp-bar.paused .ic-pause { display: none; }
+.scrub { flex: 1; height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.scrub-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+
+.cmp-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; }
+.cell {
+  border-radius: var(--r-sm); overflow: hidden; border: 1px solid var(--line);
+  background: var(--panel); position: relative; transition: .25s var(--ease);
+}
+.cell.is-ours { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 20px 44px -26px rgba(124,58,237,.55); }
+.cell video { width: 100%; background: #eef1f3; aspect-ratio: 3/4; object-fit: contain; display: block; }
+.cell-name {
+  padding: 9px 12px; font-size: 12.8px; font-weight: 600; color: var(--ink-dim);
+  border-top: 1px solid var(--line); display: flex; align-items: center; gap: 7px;
+}
+.cell.is-ours .cell-name { color: var(--ink); }
+.cell.is-ours .cell-name::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+
+/* ── robot ───────────────────────────────────────────────────────── */
+/* All four clips are re-cropped to one 9:16 window with the robot at the
+   same fraction of frame height, so the two machines are comparable on the
+   page rather than one printing twice the size of the other. */
+.robot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.rcard {
+  border-radius: var(--r); overflow: hidden; border: 1px solid var(--line);
+  background: var(--panel); box-shadow: var(--shadow);
+}
+.rcard video { width: 100%; aspect-ratio: 9/16; object-fit: cover; background: #111; display: block; }
+.rcard-meta { padding: 13px 15px; }
+.rcard-meta .who {
+  font-family: "JetBrains Mono", monospace; font-size: 10.8px; letter-spacing: .08em;
+  color: var(--accent-2); text-transform: uppercase; margin-bottom: 4px;
+}
+.rcard-meta .what { font-size: 13.8px; color: var(--ink-dim); line-height: 1.5; }
+
+/* ── gallery: a rail rather than a grid ──────────────────────────── */
+.slider { position: relative; }
+.slider-track {
+  display: flex; gap: 14px; overflow-x: auto; scroll-behavior: smooth;
+  scroll-snap-type: x proximity; padding: 4px 2px 10px;
+  scrollbar-width: none; -ms-overflow-style: none;
+  cursor: grab;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-track.dragging { cursor: grabbing; scroll-behavior: auto; scroll-snap-type: none; }
+.slider-track > * { flex: 0 0 176px; scroll-snap-align: start; }
+
+.arrow {
+  position: absolute; top: calc(50% - 21px); z-index: 3;
+  width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--line-2); background: var(--panel);
+  color: var(--ink); box-shadow: var(--shadow-lg);
+  display: grid; place-items: center; transition: .2s var(--ease);
+}
+.arrow svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
+.arrow:hover { border-color: var(--accent); color: var(--accent); }
+.arrow[disabled] { opacity: 0; pointer-events: none; }
+.arrow.prev { left: -18px; }
+.arrow.next { right: -18px; }
+
+.slider-bar { height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; margin-top: 4px; }
+.slider-fill { height: 100%; width: 20%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .12s linear, margin-left .12s linear; }
+
+.gcard {
+  border-radius: var(--r-sm); overflow: hidden; border: 1px solid var(--line);
+  background: var(--panel); cursor: zoom-in; transition: .25s var(--ease);
+}
+.gcard:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: var(--shadow-lg); }
+.gcard video { width: 100%; aspect-ratio: 560/818; object-fit: contain; background: #eef1f3; display: block; }
+.gcard-cap { padding: 10px 12px; font-size: 12.6px; color: var(--ink-dim); line-height: 1.45; }
+
+/* ── bibtex ──────────────────────────────────────────────────────── */
+.code-wrap { position: relative; }
+pre {
+  margin: 0; padding: 22px 24px; border-radius: var(--r);
+  white-space: pre-wrap; overflow-wrap: anywhere;
+  background: var(--panel); border: 1px solid var(--line);
+  overflow-x: auto; font-family: "JetBrains Mono", monospace;
+  font-size: 13px; line-height: 1.72; color: var(--ink-dim);
+}
+.copy {
+  position: absolute; top: 12px; right: 12px; cursor: pointer;
+  padding: 6px 13px; border-radius: 7px; border: 1px solid var(--line);
+  background: var(--panel-2); color: var(--ink-dim);
+  font-size: 12px; font-weight: 600; font-family: inherit; transition: .2s var(--ease);
+}
+.copy:hover { color: var(--accent); border-color: var(--accent); }
+.copy.done { color: var(--accent-2); border-color: var(--accent-2); }
+
+.foot { padding: 44px 0; border-top: 1px solid var(--line); }
+.foot p { margin: 0; color: var(--ink-faint); font-size: 13.5px; text-align: center; }
+
+/* ── lightbox ────────────────────────────────────────────────────── */
+.lb {
+  position: fixed; inset: 0; z-index: 120; display: grid; place-items: center;
+  background: rgba(20,22,28,.72); backdrop-filter: blur(10px);
+  padding: 28px 24px;
+  animation: fade .22s var(--ease);
+}
+.lb[hidden] { display: none; }
+/* The gallery clips are portrait (560x818), so width alone is the wrong
+   constraint: a 560px-wide clip is 818px tall and runs off a laptop screen.
+   Bound the height first and let the width follow. */
+.lb figure {
+  margin: 0; max-width: min(560px, 92vw); max-height: 100%;
+  display: flex; flex-direction: column; align-items: center; min-height: 0;
+}
+.lb video {
+  width: auto; max-width: 100%;
+  max-height: calc(100vh - 160px);    /* fallback for older engines */
+  max-height: calc(100dvh - 160px);   /* honours mobile browser chrome */
+  border-radius: var(--r); background: #eef1f3;
+}
+.lb figcaption {
+  text-align: center; color: #fff; margin-top: 14px; font-size: 14.5px;
+  max-width: 44ch; flex: 0 0 auto;
+}
+.lb-close {
+  position: absolute; top: 22px; right: 26px; width: 42px; height: 42px;
+  border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12);
+  color: #fff; font-size: 25px; line-height: 1; cursor: pointer;
+  transition: .2s var(--ease);
+}
+.lb-close:hover { border-color: #fff; background: rgba(255,255,255,.22); }
+@keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+
+/* ── reveal on scroll ────────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(17px); transition: opacity .62s var(--ease), transform .62s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ── responsive ──────────────────────────────────────────────────── */
+/* The content column is 940px, so these thresholds track that rather than
+   the viewport: the arrows only need tucking in once the column meets the
+   window edge, and a two-up split still has room well below 1020px. */
+@media (max-width: 1000px) {
+  .arrow.prev { left: 4px; }
+  .arrow.next { right: 4px; }
+}
+@media (max-width: 820px) {
+  .cmp-grid { grid-template-columns: repeat(3, 1fr); }
+  /* The robot cards are 9:16. Dropping them to two columns here would make
+     each one taller than the viewport, so they stay four across and simply
+     get narrower. */
+  .split, #results .split, #longseq .split { grid-template-columns: 1fr; gap: 30px; }
+  #results .tbl, #results .table-wrap { width: 100%; }
+  .robot-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-video { max-width: 100%; }
+}
+@media (max-width: 760px) {
+  .nav-links {
+    position: fixed; inset: var(--nav) 0 auto 0; flex-direction: column; gap: 0;
+    background: rgba(255,255,255,.99); border-bottom: 1px solid var(--line);
+    padding: 10px 24px 18px; display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 11px 0; border-bottom: 1px solid var(--line); }
+  .nav-toggle { display: block; }
+  .sec { padding: 68px 0; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 20px 14px; }
+  .stats .stat:last-child { grid-column: span 2; }
+  .cmp-grid { grid-template-columns: repeat(2, 1fr); }
+  .robot-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .slider-track > * { flex-basis: 158px; }
+  :root { --gutter: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FMG &middot; A Foundation Motion Generator for Text-Driven Humanoid Motion</title>
+<meta name="description" content="FMG brings the modern image-generation stack to humanoid text-to-motion: a single-stream DiT trained with rectified flow on 1,983 hours, supervising rotational dynamics so smoothness survives few-step sampling, with outputs executed on real humanoids.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1789699437">
+</head>
+<body>
+
+<!-- ── nav ────────────────────────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="brand-mark">FMG</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#abstract">Abstract</a>
+      <a href="#method">Method</a>
+      <a href="#results">Evaluation</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#longseq">Any length</a>
+      <a href="#robot">Hardware</a>
+      <a href="#gallery">More results</a>
+      <a href="#data">Data</a>
+      <a href="#bibtex">BibTeX</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</header>
+
+<!-- ── hero ───────────────────────────────────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1 class="title">
+      A Foundation Motion Generator<br>for Text-Driven Humanoid Motion
+    </h1>
+
+    <p class="authors">
+      <span class="au"><a href="https://kyfafyd.wang/" target="_blank" rel="noopener">Zhao Wang</a></span><span class="au">Jiangtao Hu</span><span class="au">Jack Yu</span><span class="au"><a href="https://geekyutao.github.io/" target="_blank" rel="noopener">Tao Yu</a><sup>&dagger;*</sup></span>
+    </p>
+    <p class="affil">
+      <a href="https://www.limxdynamics.com/en" target="_blank" rel="noopener">LimX Dynamics</a>
+      <span class="legend"><sup>&dagger;</sup>Project Lead &nbsp;&nbsp; <sup>*</sup>Corresponding Author</span>
+    </p>
+
+    <p class="tldr">
+      A pose is a rotation, and a squared error on rotations cannot tell
+      motion that flows from motion that shakes. FMG supervises how rotation
+      <em>changes</em> over time rather than only where it lands, which is
+      what makes a generated motion smooth enough to watch. Because a rotation
+      retargets onto any skeleton, the same output also runs on a real
+      humanoid, at any length asked for.
+    </p>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="#" data-todo="arxiv">
+        <svg viewBox="0 0 24 24"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+        arXiv
+      </a>
+    </div>
+
+    <figure class="hero-video reveal">
+      <video id="heroVideo" muted loop playsinline preload="metadata"
+             poster="assets/posters/long_sequence/twelve-prompts-36s.jpg"
+             src="assets/videos/long_sequence/twelve-prompts-36s.mp4"></video>
+      <figcaption>
+        One request, twelve prompts, <b>36 seconds</b>, generated as a single
+        motion. Training windows are 8 seconds long; sampling tiles them and
+        fuses the overlaps inside every denoising step.
+      </figcaption>
+    </figure>
+
+    <div class="stats">
+      <div class="stat"><span class="stat-n" data-count="1983">0</span><span class="stat-l">hours of motion</span></div>
+      <div class="stat"><span class="stat-n">0.49<i>B</i></span><span class="stat-l">parameters</span></div>
+      <div class="stat"><span class="stat-n" data-count="8">0</span><span class="stat-l">sampling steps</span></div>
+      <div class="stat"><span class="stat-n" data-count="6">0</span><span class="stat-l">evaluation axes</span></div>
+      <div class="stat"><span class="stat-n" data-count="2">0</span><span class="stat-l">physical humanoids</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── abstract ───────────────────────────────────────────────────────── -->
+<section id="abstract" class="sec">
+  <div class="wrap narrow">
+    <h2 class="h2"><span class="h2-num">01</span>Abstract</h2>
+    <p class="lead reveal">
+      Text-to-motion still inverts a diffusion process and has not inherited
+      the stack that now produces images: a single-stream DiT with joint
+      attention over text and motion tokens, trained with a rectified flow.
+      That transplant is not a drop-in, and the reason is geometric.
+    </p>
+    <p class="reveal">
+      The target is a sequence of joint rotations, so a squared error in a
+      rotation embedding is blind to whether error is spread smoothly or
+      concentrated in frame-to-frame reversals, which few solver steps no
+      longer average away; smoothness <em>falls</em> below the diffusion
+      baseline it was meant to improve on. The missing supervision is the
+      temporal derivative of rotation. FMG predicts the clean sample rather
+      than a velocity field, which keeps every term of the loss a decodable
+      pose, and supervises rotational velocity and acceleration; smoothness
+      returns past the diffusion baseline at eight solver steps.
+    </p>
+    <p class="reveal">
+      We assemble the 1,983 hours this needs, most of it our own capture, and
+      score six axes against levels measured on that capture rather than
+      idealised targets, so smoothness cannot reward frozen motion nor
+      physical plausibility punish a body for contacting itself. Because the
+      output is a rotation per joint, a sample retargets onto a robot's own
+      skeleton: one set of outputs runs on two different physical humanoids.
+    </p>
+  </div>
+</section>
+
+<!-- ── method ─────────────────────────────────────────────────────────── -->
+<section id="method" class="sec alt">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">02</span>Method</h2>
+    <figure class="fig reveal">
+      <img src="assets/figures/framework_grounded.png" alt="FMG architecture and training objective" loading="lazy">
+      <figcaption>
+        <b>Architecture and objective.</b> Text and motion tokens enter one
+        24-block stack as a single sequence predicting the clean sample, not a
+        velocity field. A block shares QKV, MLP and adaLN weights rather than
+        cross-attending. Two predictions at equal reconstruction loss whose
+        angular-acceleration error differs hundredfold are told apart by the
+        dynamics term alone.
+      </figcaption>
+    </figure>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-n">01</div>
+        <h3>Clean sample, not velocity</h3>
+        <p>
+          A velocity prediction is a quantity in noise space that cannot be
+          decoded. Predicting the clean sample keeps every term of the loss a
+          pose, convertible to rotation matrices and pushable through forward
+          kinematics.
+        </p>
+      </article>
+      <article class="card reveal">
+        <div class="card-n">02</div>
+        <h3>Supervise rotational dynamics</h3>
+        <p>
+          A squared error in 6D rotation space is indifferent to whether error
+          is spread smoothly or concentrated in frame-to-frame reversals. We
+          supervise the body-frame angular increment and its difference, which
+          is the quantity the metric is blind to.
+        </p>
+      </article>
+      <article class="card reveal">
+        <div class="card-n">03</div>
+        <h3>Any length, one motion</h3>
+        <p>
+          Sampling tiles 240-frame windows with 60-frame overlap and blends
+          them <em>inside every denoising step</em>, so a seam introduced at one
+          step is denoised away by the next. Cost grows linearly and no context
+          length is ever exceeded.
+        </p>
+      </article>
+      <article class="card reveal">
+        <div class="card-n">04</div>
+        <h3>Rotations retarget</h3>
+        <p>
+          A pose given as a rotation per joint is defined on any skeleton with
+          those joints, so reaching a machine is a retarget rather than a
+          regeneration. One set of outputs ran on two different humanoids.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── results ────────────────────────────────────────────────────────── -->
+<section id="results" class="sec">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">03</span>Six-axis evaluation</h2>
+    <p class="sub reveal">
+      Each axis is 0&ndash;100 against fixed constants, so one run is
+      comparable to another. Text-motion match, naturalness and diversity are
+      scored in a contrastive text&ndash;motion embedding. Smoothness is the
+      jerk of the body-frame angular increment, and physical plausibility is
+      limb-capsule interpenetration after forward kinematics; both are
+      referenced to the level real capture registers rather than to zero.
+      Speed is per-request latency at batch size one.
+    </p>
+    <div class="split">
+      <figure class="fig reveal">
+        <img src="assets/figures/radar_6axis.png" alt="Six-axis comparison radar chart" loading="lazy">
+      </figure>
+
+      <div class="table-wrap reveal">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Method</th><th>Institute</th><th>Params</th>
+              <th>Nat.</th><th>Match</th><th>Div.</th>
+              <th>Smth.</th><th>Speed</th><th>Phys.</th><th>Avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2507.07095" target="_blank" rel="noopener">MotionMillion</a></td>
+              <td class="venue">Shanghai AI Lab (2025)</td><td>7.8B</td>
+              <td>42.3</td><td>30.5</td><td>51.7</td><td>49.5</td><td>45.5</td><td>72.1</td><td>48.6</td>
+            </tr>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2512.23464" target="_blank" rel="noopener">HY-Motion</a></td>
+              <td class="venue">Tencent Hunyuan (2025)</td><td>1.0B</td>
+              <td>38.0</td><td>52.6</td><td>67.3</td><td>54.3</td><td>31.4</td><td>71.4</td><td>52.5</td>
+            </tr>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2603.15546" target="_blank" rel="noopener">Kimodo</a></td>
+              <td class="venue">NVIDIA (2026)</td><td>283M</td>
+              <td>36.8</td><td>51.0</td><td>59.1</td><td>79.0</td><td>49.5</td><td class="best">93.4</td><td>61.5</td>
+            </tr>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2505.01425" target="_blank" rel="noopener">GENMO</a></td>
+              <td class="venue">NVIDIA (2025)</td><td>523M</td>
+              <td>44.2</td><td>28.0</td><td>52.3</td><td>79.8</td><td>20.6</td><td>68.1</td><td>48.8</td>
+            </tr>
+            <tr class="ours">
+              <td>FMG</td><td class="venue">LimX Dynamics (2026)</td><td>495M</td>
+              <td class="best">86.4</td><td class="best">86.8</td><td class="best">89.3</td>
+              <td class="best">90.7</td><td class="best">81.4</td><td>85.0</td><td class="best">86.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── comparison ─────────────────────────────────────────────────────── -->
+<section id="comparison" class="sec alt">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">04</span>Against prior work</h2>
+    <p class="sub reveal">
+      The same prompt through five models. Every row of a prompt shares one
+      camera and one crop window, so a body that sits lower or reaches further
+      really has.
+    </p>
+
+    <div class="tabs" id="cmpTabs" role="tablist"></div>
+
+    <p class="prompt-line" id="cmpPrompt"></p>
+
+    <div class="cmp-bar">
+      <button class="ctrl" id="cmpPlay" aria-label="Play or pause">
+        <svg class="ic-pause" viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>
+        <svg class="ic-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>
+        <span>Pause</span>
+      </button>
+      <button class="ctrl" id="cmpRestart" aria-label="Restart">
+        <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+        <span>Restart</span>
+      </button>
+      <div class="scrub"><div class="scrub-fill" id="cmpScrub"></div></div>
+    </div>
+
+    <div class="cmp-grid" id="cmpGrid"></div>
+  </div>
+</section>
+
+<!-- ── long sequence ──────────────────────────────────────────────────── -->
+<section id="longseq" class="sec">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">05</span>Motion of any length</h2>
+    <div class="split rev">
+      <div class="reveal">
+        <p class="lead">Nothing in the recipe fixes a length.</p>
+        <p>
+          Training sees 8-second windows. Sampling tiles any requested length
+          with overlapping windows and blends them
+          <em>inside every denoising step</em>, so a seam raised at one step is
+          denoised away by the next.
+        </p>
+        <p>
+          Across several hundred seams, the jerk where two windows meet is not
+          distinguishable from no seam at all. Cross-fading finished windows
+          instead only moves the kink to the edge of the fade.
+        </p>
+        <p class="note">
+          The overlay reports the active prompt and the tiling boundaries.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <div class="slider one-up" id="seq">
+          <button class="arrow prev" id="seqPrev" aria-label="Previous clip">
+            <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="slider-track" id="seqTrack">
+            <figure class="fig slide">
+              <video muted loop playsinline preload="none"
+                     poster="assets/posters/long_sequence/twelve-prompts-36s.jpg"
+                     src="assets/videos/long_sequence/twelve-prompts-36s.mp4"></video>
+            </figure>
+            <figure class="fig slide">
+              <video muted loop playsinline preload="none"
+                     poster="assets/posters/long_sequence/five-prompts-20s.jpg"
+                     src="assets/videos/long_sequence/five-prompts-20s.mp4"></video>
+            </figure>
+            <figure class="fig slide">
+              <video muted loop playsinline preload="none"
+                     poster="assets/posters/long_sequence/twelve-prompts-36s-a05.jpg"
+                     src="assets/videos/long_sequence/twelve-prompts-36s-a05.mp4"></video>
+            </figure>
+          </div>
+          <button class="arrow next" id="seqNext" aria-label="Next clip">
+            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div class="dots" id="seqDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── real robot ─────────────────────────────────────────────────────── -->
+<section id="robot" class="sec alt">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">06</span>Executed on hardware</h2>
+    <p class="sub reveal">
+      Because the output is a rotation per joint, a sample retargets onto a
+      robot's own skeleton. One set of outputs was executed on two different
+      machines, both tracking the retargeted motion under the same whole-body
+      controller.
+    </p>
+    <div class="robot-grid" id="robotGrid"></div>
+  </div>
+</section>
+
+<!-- ── gallery ────────────────────────────────────────────────────────── -->
+<section id="gallery" class="sec">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">07</span>Further generations</h2>
+    <p class="sub reveal">
+      One checkpoint, one sampling budget, no per-prompt tuning. Drag or scroll
+      sideways; click any clip to enlarge.
+    </p>
+    <div class="slider" id="gal">
+      <button class="arrow prev" id="galPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <div class="slider-track" id="galGrid"></div>
+      <button class="arrow next" id="galNext" aria-label="Next">
+        <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="slider-bar"><div class="slider-fill" id="galBar"></div></div>
+  </div>
+</section>
+
+<!-- ── data ───────────────────────────────────────────────────────────── -->
+<section id="data" class="sec alt">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">08</span>The training mixture</h2>
+    <figure class="fig reveal">
+      <img src="assets/figures/datamix.png" alt="Training data distribution" loading="lazy">
+      <figcaption>
+        <b>(a)</b> All 1,983 hours over our shoot taxonomy; the three rings are
+        family, subfamily and action, and arc is hours. <b>(b)</b> Caption
+        length over all corpora, weighted by hours. <b>(c)</b> Our own
+        captions' vocabulary.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ── bibtex ─────────────────────────────────────────────────────────── -->
+<section id="bibtex" class="sec">
+  <div class="wrap">
+    <h2 class="h2"><span class="h2-num">09</span>BibTeX</h2>
+    <div class="code-wrap reveal">
+      <button class="copy" id="copyBib">Copy</button>
+<pre id="bibText"><code>@article{fmg2026,
+  title   = {{FMG}: A Foundation Motion Generator for Text-Driven Humanoid Motion},
+  author  = {Wang, Zhao and Hu, Jiangtao and Yu, Jack and Yu, Tao},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Project page for FMG. All motion shown is generated by a single checkpoint.</p>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div class="lb" id="lb" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <figure>
+    <video id="lbVideo" muted loop playsinline controls></video>
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</div>
+
+<script src="js/main.js?v=1789699437"></script>
+</body>
+</html>
