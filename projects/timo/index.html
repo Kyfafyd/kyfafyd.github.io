@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FMG &middot; A Foundation Motion Generator for Text-Driven Humanoid Motion</title>
-<meta name="description" content="FMG brings the modern image-generation stack to humanoid text-to-motion: a single-stream DiT trained with rectified flow on 1,983 hours, supervising rotational dynamics so smoothness survives few-step sampling, with outputs executed on real humanoids.">
+<title>Timo &middot; Taming Multimodal Diffusion Transformer for Human Motion Generation</title>
+<meta name="description" content="Timo is a kinematics-aware multimodal diffusion transformer for human motion: shared text–motion attention, flow matching, and geometric and rotational-kinematics supervision. On a six-axis benchmark it leads the average score by 25.1 points.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=1789699437">
+<link rel="stylesheet" href="css/style.css?v=1789730001">
 </head>
 <body>
 
 <!-- ── nav ────────────────────────────────────────────────────────────── -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top"><span class="brand-mark">FMG</span></a>
+    <a class="brand" href="#top"><span class="brand-mark">Timo</span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#abstract">Abstract</a>
       <a href="#method">Method</a>
@@ -39,7 +39,8 @@
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
     <h1 class="title">
-      A Foundation Motion Generator<br>for Text-Driven Humanoid Motion
+      <span class="title-row">Timo: Taming Multimodal Diffusion Transformer</span>
+      for Human Motion Generation
     </h1>
 
     <p class="authors">
@@ -48,15 +49,6 @@
     <p class="affil">
       <a href="https://www.limxdynamics.com/en" target="_blank" rel="noopener">LimX Dynamics</a>
       <span class="legend"><sup>&dagger;</sup>Project Lead &nbsp;&nbsp; <sup>*</sup>Corresponding Author</span>
-    </p>
-
-    <p class="tldr">
-      A pose is a rotation, and a squared error on rotations cannot tell
-      motion that flows from motion that shakes. FMG supervises how rotation
-      <em>changes</em> over time rather than only where it lands, which is
-      what makes a generated motion smooth enough to watch. Because a rotation
-      retargets onto any skeleton, the same output also runs on a real
-      humanoid, at any length asked for.
     </p>
 
     <div class="cta">
@@ -92,29 +84,26 @@
   <div class="wrap narrow">
     <h2 class="h2"><span class="h2-num">01</span>Abstract</h2>
     <p class="lead reveal">
-      Text-to-motion still inverts a diffusion process and has not inherited
-      the stack that now produces images: a single-stream DiT with joint
-      attention over text and motion tokens, trained with a rectified flow.
-      That transplant is not a drop-in, and the reason is geometric.
+      Most human motion generators fuse text and motion through a pooled
+      caption or cross-attention, rather than modeling both at the token
+      level. Multimodal diffusion transformers do that joint modeling for
+      images and video. Applied directly to motion, they still leave a gap:
+      framewise reconstruction does not by itself produce coherent changes
+      in body orientation.
     </p>
     <p class="reveal">
-      The target is a sequence of joint rotations, so a squared error in a
-      rotation embedding is blind to whether error is spread smoothly or
-      concentrated in frame-to-frame reversals, which few solver steps no
-      longer average away; smoothness <em>falls</em> below the diffusion
-      baseline it was meant to improve on. The missing supervision is the
-      temporal derivative of rotation. FMG predicts the clean sample rather
-      than a velocity field, which keeps every term of the loss a decodable
-      pose, and supervises rotational velocity and acceleration; smoothness
-      returns past the diffusion baseline at eight solver steps.
+      We propose <b>Timo</b>, a kinematics-aware multimodal diffusion
+      transformer for human motion. It combines fully shared text&ndash;motion
+      attention with flow matching, geometric and rotational-kinematics
+      supervision, and a curriculum that goes from broad motion learning to
+      detailed caption alignment.
     </p>
     <p class="reveal">
-      We assemble the 1,983 hours this needs, most of it our own capture, and
-      score six axes against levels measured on that capture rather than
-      idealised targets, so smoothness cannot reward frozen motion nor
-      physical plausibility punish a body for contacting itself. Because the
-      output is a rotation per joint, a sample retargets onto a robot's own
-      skeleton: one set of outputs runs on two different physical humanoids.
+      On the six-axis comparison below, Timo's average is <b>86.6</b>,
+      <b>25.1</b> points above the next system (<b>61.5</b>). Text-Motion
+      Match gains <b>34.2</b> points over the strongest baseline on that
+      axis, and Smoothness <b>10.9</b>. Kimodo remains highest on
+      Plausibility.
     </p>
   </div>
 </section>
@@ -124,55 +113,44 @@
   <div class="wrap">
     <h2 class="h2"><span class="h2-num">02</span>Method</h2>
     <figure class="fig reveal">
-      <img src="assets/figures/framework_grounded.png" alt="FMG architecture and training objective" loading="lazy">
+      <img src="assets/figures/framework_grounded.png?v=1789800001" alt="Timo architecture and training objective" loading="lazy">
       <figcaption>
-        <b>Architecture and objective.</b> Text and motion tokens enter one
-        24-block stack as a single sequence predicting the clean sample, not a
-        velocity field. A block shares QKV, MLP and adaLN weights rather than
-        cross-attending. Two predictions at equal reconstruction loss whose
-        angular-acceleration error differs hundredfold are told apart by the
-        dynamics term alone.
+        <b>Kinematics-aware multimodal generation.</b> <b>(a)</b> Text and
+        motion tokens enter one 24-block stack as a single sequence predicting
+        the clean sample, not a velocity field. <b>(b)</b> A block shares QKV,
+        MLP and adaLN weights across the two modalities. <b>(c)</b>
+        Reconstruction, rotational kinematics and decoded geometry. At right,
+        two predictions with equal reconstruction loss but different temporal
+        errors; only L<sub>kin</sub> sees the difference.
       </figcaption>
     </figure>
 
     <div class="cards">
       <article class="card reveal">
         <div class="card-n">01</div>
-        <h3>Clean sample, not velocity</h3>
+        <h3>Shared text and motion</h3>
         <p>
-          A velocity prediction is a quantity in noise space that cannot be
-          decoded. Predicting the clean sample keeps every term of the loss a
-          pose, convertible to rotation matrices and pushable through forward
-          kinematics.
+          Text and motion share one transformer in every block: the same
+          attention, MLP and adaLN weights. Flow matching predicts the clean
+          pose, so eight solver steps suffice.
         </p>
       </article>
       <article class="card reveal">
         <div class="card-n">02</div>
-        <h3>Supervise rotational dynamics</h3>
+        <h3>Kinematics-aware losses</h3>
         <p>
-          A squared error in 6D rotation space is indifferent to whether error
-          is spread smoothly or concentrated in frame-to-frame reversals. We
-          supervise the body-frame angular increment and its difference, which
-          is the quantity the metric is blind to.
+          Reconstruction is blind to frame-to-frame jitter. We also supervise
+          decoded geometry and rotational kinematics, then train from broad
+          motion to detailed captions. The architecture stays unchanged.
         </p>
       </article>
       <article class="card reveal">
         <div class="card-n">03</div>
-        <h3>Any length, one motion</h3>
+        <h3>One six-axis scale</h3>
         <p>
-          Sampling tiles 240-frame windows with 60-frame overlap and blends
-          them <em>inside every denoising step</em>, so a seam introduced at one
-          step is denoised away by the next. Cost grows linearly and no context
-          length is ever exceeded.
-        </p>
-      </article>
-      <article class="card reveal">
-        <div class="card-n">04</div>
-        <h3>Rotations retarget</h3>
-        <p>
-          A pose given as a rotation per joint is defined on any skeleton with
-          those joints, so reaching a machine is a retarget rather than a
-          regeneration. One set of outputs ran on two different humanoids.
+          Four released systems are rescored on the same 0&ndash;100 axes.
+          Timo's average is 86.6, 25.1 points above the next result. Kimodo
+          remains highest on Plausibility.
         </p>
       </article>
     </div>
@@ -184,17 +162,25 @@
   <div class="wrap">
     <h2 class="h2"><span class="h2-num">03</span>Six-axis evaluation</h2>
     <p class="sub reveal">
-      Each axis is 0&ndash;100 against fixed constants, so one run is
-      comparable to another. Text-motion match, naturalness and diversity are
-      scored in a contrastive text&ndash;motion embedding. Smoothness is the
-      jerk of the body-frame angular increment, and physical plausibility is
-      limb-capsule interpenetration after forward kinematics; both are
-      referenced to the level real capture registers rather than to zero.
-      Speed is per-request latency at batch size one.
+      Each axis is a custom 0&ndash;100 score, higher better, so the columns
+      share one scale. Text-Motion Match, Naturalness and Diversity are scored
+      in a contrastive text&ndash;motion embedding. Smoothness uses
+      third-order differences of the body-frame angular increment.
+      Plausibility is limb-capsule interpenetration, a geometric proxy rather
+      than a test of balance or dynamics. Speed combines time to the first
+      output and per-segment time at batch size one. The last column is the
+      mean of all six. Timo averages 86.6, 25.1 points above 61.5;
+      Text-Motion Match is 34.2 points above the best other score on that
+      axis, and Smoothness 10.9. Kimodo remains highest on Plausibility.
     </p>
     <div class="split">
-      <figure class="fig reveal">
-        <img src="assets/figures/radar_6axis.png" alt="Six-axis comparison radar chart" loading="lazy">
+      <figure class="fig radar-fig reveal">
+        <div class="radar" id="radar">
+          <svg id="radarSvg" viewBox="0 42 480 314" role="img"
+               aria-label="Six-axis comparison radar chart"></svg>
+          <div class="radar-legend" id="radarLegend" role="group"
+               aria-label="Highlight a method"></div>
+        </div>
       </figure>
 
       <div class="table-wrap reveal">
@@ -203,32 +189,32 @@
             <tr>
               <th>Method</th><th>Institute</th><th>Params</th>
               <th>Nat.</th><th>Match</th><th>Div.</th>
-              <th>Smth.</th><th>Speed</th><th>Phys.</th><th>Avg</th>
+              <th>Smth.</th><th>Speed</th><th>Plaus.</th><th>Avg</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-model="MotionMillion">
               <td><a href="https://arxiv.org/abs/2507.07095" target="_blank" rel="noopener">MotionMillion</a></td>
               <td class="venue">Shanghai AI Lab (2025)</td><td>7.8B</td>
               <td>42.3</td><td>30.5</td><td>51.7</td><td>49.5</td><td>45.5</td><td>72.1</td><td>48.6</td>
             </tr>
-            <tr>
+            <tr data-model="HY-Motion">
               <td><a href="https://arxiv.org/abs/2512.23464" target="_blank" rel="noopener">HY-Motion</a></td>
               <td class="venue">Tencent Hunyuan (2025)</td><td>1.0B</td>
               <td>38.0</td><td>52.6</td><td>67.3</td><td>54.3</td><td>31.4</td><td>71.4</td><td>52.5</td>
             </tr>
-            <tr>
-              <td><a href="https://arxiv.org/abs/2603.15546" target="_blank" rel="noopener">Kimodo</a></td>
-              <td class="venue">NVIDIA (2026)</td><td>283M</td>
-              <td>36.8</td><td>51.0</td><td>59.1</td><td>79.0</td><td>49.5</td><td class="best">93.4</td><td>61.5</td>
-            </tr>
-            <tr>
+            <tr data-model="GENMO">
               <td><a href="https://arxiv.org/abs/2505.01425" target="_blank" rel="noopener">GENMO</a></td>
               <td class="venue">NVIDIA (2025)</td><td>523M</td>
               <td>44.2</td><td>28.0</td><td>52.3</td><td>79.8</td><td>20.6</td><td>68.1</td><td>48.8</td>
             </tr>
-            <tr class="ours">
-              <td>FMG</td><td class="venue">LimX Dynamics (2026)</td><td>495M</td>
+            <tr data-model="Kimodo">
+              <td><a href="https://arxiv.org/abs/2603.15546" target="_blank" rel="noopener">Kimodo</a></td>
+              <td class="venue">NVIDIA (2026)</td><td>283M</td>
+              <td>36.8</td><td>51.0</td><td>59.1</td><td>79.0</td><td>49.5</td><td class="best">93.4</td><td>61.5</td>
+            </tr>
+            <tr class="ours" data-model="Timo">
+              <td>Timo</td><td class="venue">LimX Dynamics (2026)</td><td>495M</td>
               <td class="best">86.4</td><td class="best">86.8</td><td class="best">89.3</td>
               <td class="best">90.7</td><td class="best">81.4</td><td>85.0</td><td class="best">86.6</td>
             </tr>
@@ -244,9 +230,9 @@
   <div class="wrap">
     <h2 class="h2"><span class="h2-num">04</span>Against prior work</h2>
     <p class="sub reveal">
-      The same prompt through five models. Every row of a prompt shares one
-      camera and one crop window, so a body that sits lower or reaches further
-      really has.
+      The same prompt through five models, in one camera and one crop. The
+      pickup clips differ in how far the body descends and whether it stands
+      back up; the gesture clips differ in whether the arm stays extended.
     </p>
 
     <div class="tabs" id="cmpTabs" role="tablist"></div>
@@ -276,17 +262,18 @@
     <h2 class="h2"><span class="h2-num">05</span>Motion of any length</h2>
     <div class="split rev">
       <div class="reveal">
-        <p class="lead">Nothing in the recipe fixes a length.</p>
+        <p class="lead">A longer request reuses the same generator.</p>
         <p>
-          Training sees 8-second windows. Sampling tiles any requested length
-          with overlapping windows and blends them
-          <em>inside every denoising step</em>, so a seam raised at one step is
-          denoised away by the next.
+          Training sees 8-second windows. A longer request is tiled with
+          overlapping windows, and those overlaps are blended
+          <em>inside every sampling step</em>, without growing the attention
+          context.
         </p>
         <p>
-          Across several hundred seams, the jerk where two windows meet is not
-          distinguishable from no seam at all. Cross-fading finished windows
-          instead only moves the kink to the edge of the fade.
+          The clips below compose several prompts into one motion, up to
+          36 seconds, mixing locomotion with gestures and posture changes.
+          They illustrate that composition. They do not measure how far the
+          motion drifts.
         </p>
         <p class="note">
           The overlay reports the active prompt and the tiling boundaries.
@@ -330,10 +317,10 @@
   <div class="wrap">
     <h2 class="h2"><span class="h2-num">06</span>Executed on hardware</h2>
     <p class="sub reveal">
-      Because the output is a rotation per joint, a sample retargets onto a
-      robot's own skeleton. One set of outputs was executed on two different
-      machines, both tracking the retargeted motion under the same whole-body
-      controller.
+      The generator supplies a kinematic reference. Each sample is retargeted
+      and tracked on two machines, LimX Luna and LimX Oli. These clips show
+      that the same outputs can be executed on both. They are not a success
+      rate across robots or prompts.
     </p>
     <div class="robot-grid" id="robotGrid"></div>
   </div>
@@ -363,14 +350,14 @@
 <!-- ── data ───────────────────────────────────────────────────────────── -->
 <section id="data" class="sec alt">
   <div class="wrap">
-    <h2 class="h2"><span class="h2-num">08</span>The training mixture</h2>
+    <h2 class="h2"><span class="h2-num">08</span>Training data</h2>
     <figure class="fig reveal">
-      <img src="assets/figures/datamix.png" alt="Training data distribution" loading="lazy">
+      <img src="assets/figures/datamix.png?v=1789728397" alt="Training data distribution" loading="lazy">
       <figcaption>
-        <b>(a)</b> All 1,983 hours over our shoot taxonomy; the three rings are
-        family, subfamily and action, and arc is hours. <b>(b)</b> Caption
-        length over all corpora, weighted by hours. <b>(c)</b> Our own
-        captions' vocabulary.
+        <b>Corpus composition.</b> <b>(a)</b> Motion categories over all 1,983
+        hours; the three rings are family, subfamily and action, and arc is
+        hours. <b>(b)</b> Caption length, shown for whole takes, one-clip
+        recordings, and VLM-labelled clips. <b>(c)</b> Caption vocabulary.
       </figcaption>
     </figure>
   </div>
@@ -382,8 +369,8 @@
     <h2 class="h2"><span class="h2-num">09</span>BibTeX</h2>
     <div class="code-wrap reveal">
       <button class="copy" id="copyBib">Copy</button>
-<pre id="bibText"><code>@article{fmg2026,
-  title   = {{FMG}: A Foundation Motion Generator for Text-Driven Humanoid Motion},
+<pre id="bibText"><code>@article{timo2026,
+  title   = {Timo: Taming Multimodal Diffusion Transformer for Human Motion Generation},
   author  = {Wang, Zhao and Hu, Jiangtao and Yu, Jack and Yu, Tao},
   journal = {arXiv preprint arXiv:XXXX.XXXXX},
   year    = {2026}
@@ -394,7 +381,7 @@
 
 <footer class="foot">
   <div class="wrap">
-    <p>Project page for FMG. All motion shown is generated by a single checkpoint.</p>
+    <p>Project page for Timo. All motion shown is generated by a single checkpoint.</p>
   </div>
 </footer>
 
@@ -407,6 +394,6 @@
   </figure>
 </div>
 
-<script src="js/main.js?v=1789699437"></script>
+<script src="js/main.js?v=1789800001"></script>
 </body>
 </html>

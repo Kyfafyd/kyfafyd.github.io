@@ -12,10 +12,15 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const V  = "assets/videos/";
 
+  /* Bump when a clip is re-encoded. A plain static server sends no cache
+     headers for mp4, so a browser that already holds the old file will keep
+     playing it; changing the URL is the only reliable way to retire it. */
+  const REV = "2";
+
   /* ── data ──────────────────────────────────────────────────────── */
 
   // Row order follows the paper's table, ours last.
-  const MODELS = ["MotionMillion", "HY-Motion", "Kimodo", "GENMO", "FMG (ours)"];
+  const MODELS = ["MotionMillion", "HY-Motion", "GENMO", "Kimodo", "FMG (ours)"];
 
   const PROMPTS = [
     { short: "Pick up",  text: "A person bends down to pick up an object from the ground" },
@@ -85,10 +90,180 @@
     v.preload = "none";
     v.setAttribute("muted", "");           // iOS wants the attribute too
     v.poster = posterFor(src);
-    v.dataset.src = encodeURI(src);
+    v.dataset.src = `${encodeURI(src)}?v=${REV}`;
     if (cls) v.className = cls;
     return v;
   };
+
+  /* ── six-axis radar ────────────────────────────────────────────────
+     Drawn as SVG rather than shipped as a PNG so a reader can pull one
+     method out of five overlapping traces. Axis order matches the table's
+     row order, ours last. */
+
+  const AXES = [
+    { key: "match", label: "Text-Motion Match" },
+    { key: "nat",   label: "Naturalness" },
+    { key: "phys",  label: "Plausibility" },
+    { key: "speed", label: "Speed" },
+    { key: "smth",  label: "Smoothness" },
+    { key: "div",   label: "Diversity" },
+  ];
+
+  const SERIES = [
+    { name: "MotionMillion", color: "#4a90d9", dash: "7 5",
+      v: { nat: 42.3, match: 30.5, div: 51.7, smth: 49.5, speed: 45.5, phys: 72.1 } },
+    { name: "HY-Motion",     color: "#e0952f", dash: "3 4",
+      v: { nat: 38.0, match: 52.6, div: 67.3, smth: 54.3, speed: 31.4, phys: 71.4 } },
+    { name: "GENMO",         color: "#8d93a1", dash: "5 5",
+      v: { nat: 44.2, match: 28.0, div: 52.3, smth: 79.8, speed: 20.6, phys: 68.1 } },
+    { name: "Kimodo",        color: "#2f9e6e", dash: "9 4 2 4",
+      v: { nat: 36.8, match: 51.0, div: 59.1, smth: 79.0, speed: 49.5, phys: 93.4 } },
+    { name: "Timo (ours)",   color: "#7c3aed", dash: "",
+      v: { nat: 86.4, match: 86.8, div: 89.3, smth: 90.7, speed: 81.4, phys: 85.0 } },
+  ];
+
+  (function radar() {
+    const svg = $("#radarSvg");
+    if (!svg) return;
+    const NS = "http://www.w3.org/2000/svg";
+    const CX = 240, CY = 196, R = 132, MAX = 100;
+    const RINGS = [20, 40, 60, 80, 100];
+
+    const el = (n, a = {}) => {
+      const e = document.createElementNS(NS, n);
+      for (const k in a) e.setAttribute(k, a[k]);
+      return e;
+    };
+    // -90deg is straight up; axes run clockwise from there, as in the paper.
+    const ang = (i) => (-90 + i * 360 / AXES.length) * Math.PI / 180;
+    const pt = (i, val) => {
+      const r = R * Math.max(0, Math.min(MAX, val)) / MAX;
+      return [CX + r * Math.cos(ang(i)), CY + r * Math.sin(ang(i))];
+    };
+    const ringPts = (val) =>
+      AXES.map((_, i) => pt(i, val).map(n => n.toFixed(1)).join(",")).join(" ");
+
+    const grid = el("g", { class: "radar-grid" });
+    for (const v of RINGS)
+      grid.appendChild(el("polygon", { points: ringPts(v),
+        class: "ring" + (v === MAX ? " ring-out" : "") }));
+    AXES.forEach((_, i) => {
+      const [x, y] = pt(i, MAX);
+      grid.appendChild(el("line", { x1: CX, y1: CY, x2: x.toFixed(1), y2: y.toFixed(1), class: "spoke" }));
+    });
+    // Two ticks are enough to read the scale; five would clutter the middle.
+    for (const v of [40, 80]) {
+      const [, y] = pt(0, v);
+      const t = el("text", { x: CX + 10, y: (y + 5).toFixed(1), class: "radar-tick" });
+      t.textContent = v;
+      grid.appendChild(t);
+    }
+    svg.appendChild(grid);
+
+    AXES.forEach((a, i) => {
+      const [x, y] = pt(i, MAX + 14);
+      const c = Math.cos(ang(i));
+      const t = el("text", {
+        x: x.toFixed(1), y: (y + (Math.abs(c) < 0.2 ? (y < CY ? -4 : 17) : 6)).toFixed(1),
+        class: "radar-axis",
+        "text-anchor": Math.abs(c) < 0.2 ? "middle" : (c > 0 ? "start" : "end"),
+      });
+      t.textContent = a.label;
+      svg.appendChild(t);
+    });
+
+    const plot = el("g", { class: "radar-plot" });
+    svg.appendChild(plot);
+
+    SERIES.forEach((s, k) => {
+      const g = el("g", { class: "trace" + (k === SERIES.length - 1 ? " is-ours" : ""),
+                          "data-series": s.name });
+      const points = AXES.map((a, i) => pt(i, s.v[a.key]));
+      const str = points.map(p => p.map(n => n.toFixed(1)).join(",")).join(" ");
+      g.appendChild(el("polygon", { points: str, class: "area", fill: s.color }));
+      g.appendChild(el("polygon", { points: str, class: "line",
+                                    stroke: s.color, "stroke-dasharray": s.dash }));
+      points.forEach(([x, y], i) => {
+        const d = el("circle", { cx: x.toFixed(1), cy: y.toFixed(1), r: 4.2,
+                                 class: "node", fill: s.color });
+        const title = el("title");
+        title.textContent = `${s.name} · ${AXES[i].label}: ${s.v[AXES[i].key].toFixed(1)}`;
+        d.appendChild(title);
+        g.appendChild(d);
+      });
+      plot.appendChild(g);
+    });
+
+    /* ── selection ──────────────────────────────────────────────────
+       Hover previews, a click locks; a second click on the same method
+       releases it. Keeping the two separate means the highlight does not
+       vanish the moment the pointer leaves the legend. */
+
+    const legend = $("#radarLegend");
+    const rows = $$('#results .tbl tbody tr[data-model]');
+    const wrap = $("#radar");
+    let locked = null;
+
+    const keyOf = (n) => n.replace(" (ours)", "");
+
+    SERIES.forEach((s) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "lg" + (s.name.startsWith("Timo") ? " is-ours" : "");
+      b.dataset.series = s.name;
+      b.style.setProperty("--c", s.color);
+      b.innerHTML = `<i></i><span></span>`;
+      $("span", b).textContent = s.name;
+      b.addEventListener("click", () => pick(locked === s.name ? null : s.name));
+      b.addEventListener("pointerenter", () => show(s.name));
+      b.addEventListener("focus", () => show(s.name));
+      b.addEventListener("pointerleave", () => show(locked));
+      b.addEventListener("blur", () => show(locked));
+      legend.appendChild(b);
+    });
+
+    $$(".trace", plot).forEach((g) => {
+      const n = g.dataset.series;
+      g.addEventListener("click", () => pick(locked === n ? null : n));
+      g.addEventListener("pointerenter", () => show(n));
+      g.addEventListener("pointerleave", () => show(locked));
+    });
+
+    // The table is the same five methods, so it drives the same highlight.
+    rows.forEach((tr) => {
+      const n = SERIES.find(s => keyOf(s.name) === tr.dataset.model)?.name;
+      if (!n) return;
+      tr.addEventListener("pointerenter", () => show(n));
+      tr.addEventListener("pointerleave", () => show(locked));
+      tr.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;    // the paper link still wins
+        pick(locked === n ? null : n);
+      });
+    });
+
+    function pick(n) { locked = n; show(n); }
+
+    function show(n) {
+      wrap.classList.toggle("focused", !!n);
+      $$(".trace", plot).forEach(g => {
+        const on = g.dataset.series === n;
+        g.classList.toggle("on", on);
+        g.classList.toggle("off", !!n && !on);
+        // A highlighted trace has to be drawn over the others.
+        if (on) plot.appendChild(g);
+      });
+      $$(".lg", legend).forEach(b => {
+        b.classList.toggle("on", b.dataset.series === n);
+        b.setAttribute("aria-pressed", String(locked === b.dataset.series));
+      });
+      rows.forEach(tr => {
+        tr.classList.toggle("hi", !!n && keyOf(n) === tr.dataset.model);
+      });
+      if (!n) SERIES.forEach(s => {           // restore the paint order
+        plot.appendChild($(`.trace[data-series="${s.name}"]`, plot));
+      });
+    }
+  })();
 
   /* ── comparison ────────────────────────────────────────────────── */
 
@@ -118,7 +293,7 @@
     $("#cmpPrompt").textContent = p.text + ".";
     gridEl.replaceChildren();
     for (const m of MODELS) {
-      const ours = m.startsWith("FMG");
+      const ours = m.startsWith("FMG") || m.startsWith("Timo");
       const cell = document.createElement("div");
       cell.className = "cell" + (ours ? " is-ours" : "");
       const v = mkVideo(`${V}comparison/${p.text}/${m}.mp4`);
@@ -128,7 +303,7 @@
       v.src = v.dataset.src;
       const name = document.createElement("div");
       name.className = "cell-name";
-      name.textContent = ours ? "FMG (ours)" : m;
+      name.textContent = ours ? "Timo (ours)" : m;
       cell.append(v, name);
       gridEl.appendChild(cell);
       watch(v);
