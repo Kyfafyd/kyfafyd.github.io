@@ -1,4 +1,4 @@
-/* FMG project page
+/* Timo project page
    ------------------------------------------------------------------
    The renders have a light checkerboard floor and a violet body, so the
    page is dark: a light video card reads as a lit panel against it, and
@@ -572,6 +572,7 @@ pre {
   .hero-video { max-width: 100%; }
 }
 @media (max-width: 760px) {
+  .title-row { white-space: normal; }
   .nav-links {
     position: fixed; inset: var(--nav) 0 auto 0; flex-direction: column; gap: 0;
     background: rgba(255,255,255,.99); border-bottom: 1px solid var(--line);

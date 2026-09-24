@@ -1,4 +1,4 @@
-/* FMG project page
+/* Timo project page
    ------------------------------------------------------------------
    No framework and no build step: the page is a handful of lists
    rendered into the DOM, plus an IntersectionObserver that keeps only
@@ -20,7 +20,7 @@
   /* ── data ──────────────────────────────────────────────────────── */
 
   // Row order follows the paper's table, ours last.
-  const MODELS = ["MotionMillion", "HY-Motion", "GENMO", "Kimodo", "FMG (ours)"];
+  const MODELS = ["MotionMillion", "HY-Motion", "GENMO", "Kimodo", "Timo (ours)"];
 
   const PROMPTS = [
     { short: "Pick up",  text: "A person bends down to pick up an object from the ground" },
@@ -293,7 +293,7 @@
     $("#cmpPrompt").textContent = p.text + ".";
     gridEl.replaceChildren();
     for (const m of MODELS) {
-      const ours = m.startsWith("FMG") || m.startsWith("Timo");
+      const ours = m.startsWith("Timo");
       const cell = document.createElement("div");
       cell.className = "cell" + (ours ? " is-ours" : "");
       const v = mkVideo(`${V}comparison/${p.text}/${m}.mp4`);
@@ -646,7 +646,7 @@
       requestAnimationFrame(tick);
       cio.unobserve(el);
     }
-  }, { threshold: 0.25 });
+  }, { threshold: 1 / 4 });
   $$("[data-count]").forEach(el => cio.observe(el));
 
   /* ── bibtex ────────────────────────────────────────────────────── */
