@@ -664,15 +664,4 @@
     copyBtn.classList.add("done");
     setTimeout(() => { copyBtn.textContent = "Copy"; copyBtn.classList.remove("done"); }, 1600);
   });
-
-  /* Links that have no destination yet should not look live. */
-  $$("[data-todo]").forEach(a => {
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      const was = a.querySelector("svg").nextSibling;
-      const old = a.textContent.trim();
-      a.lastChild.textContent = " link pending";
-      setTimeout(() => { a.lastChild.textContent = " " + old; }, 1400);
-    });
-  });
 })();
