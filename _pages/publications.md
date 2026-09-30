@@ -12,7 +12,13 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
 <!-- See <img alt="Google Scholar citations" src="https://img.shields.io/endpoint?logo=google-scholar&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2FKyfafyd%2Fkyfafyd.github.io%2Fmaster%2Fgs_data_shieldsio.json"> -->
 
 
-## 2025
+- Timo: Taming Multimodal Diffusion Transformer for Human Motion Generation. <br/>
+  **Zhao Wang**, Jiangtao Hu, Jack Yu, Tao Yu. <br/>
+  arXiv, 2026. <br/>
+  [[paper]](https://arxiv.org/abs/2609.30761)
+  [[project]](https://kyfafyd.wang/projects/timo)
+  [[demo]](https://timo.kyfafyd.wang)
+
 
 - AnyHumanV: Bootstrap Controllable Human Video Generation with Fine-to-Coarse Guidance. <br/>
   **Zhao Wang**\*, Hao Wen\*, Lingting Zhu, Chenming Shang, Yujiu Yang, Qi Dou. <br/>
@@ -50,9 +56,6 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   **Zhao Wang**\*, Yeqian Zhang\*, Jiayi Gu\*, Yueyao Chen, Yonghao Long, Xiang Xia, Puhua Zhang, Chunchao Zhu, Zerui Wang, Qi Dou, Zheng Wang, Zizhen Zhang. <br/>
   *Computer Assisted Surgery* (**CAS, SCI Q2, IF: 3.0**), 2025. <br/>
 
-
-## 2024
-
 - Holistic-Motion2D: Scalable Whole-body Human Motion Generation in 2D Space. <br/>
   Yuan Wang\*, **Zhao Wang**\*, Junhao Gong\*, Di Huang, Tong He, Wanli Ouyang, Jile Jiao, Xuetao Feng, Qi Dou, Shixiang Tang, Dan Xu. <br/>
   arXiv, 2024. <br/>
@@ -86,9 +89,6 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   *IEEE/CVF Winter Conference on Applications of Computer Vision* (**WACV**), 2024. <br/>
   [[paper]](https://arxiv.org/abs/2403.09432)
 
-
-## 2023
-
 - Open-Vocabulary Object Detection with Meta Prompt Representation and Instance Contrastive Optimization. <br/>
   **Zhao Wang**, Aoxue Li, Fengwei Zhou, Zhenguo Li, Qi Dou. <br/>
   *British Machine Vision Conference* (**BMVC**), 2023. <br/>
@@ -106,8 +106,6 @@ See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAA
   Jiaping Hu, Chuanyang Zheng, Qingling Yu, Lijie Zhong, Keyan Yu, Yanjun Chen, **Zhao Wang**, Bin Zhang, Qi Dou, Xiaodong Zhang. <br/>
   *Quantitative Imaging in Medicine and Surgery* (**QIMS, SCI Q2, IF: 4.63**), 2023. <br/>
   [[paper]](https://qims.amegroups.com/article/view/114391)
-
-## Before
 
 - Federated Learning from Only Unlabeled Data with Class-Conditional-Sharing Clients. <br/>
   Nan Lu, **Zhao Wang**, Xiaoxiao Li, Gang Niu, Qi Dou, Masashi Sugiyama. <br/>
