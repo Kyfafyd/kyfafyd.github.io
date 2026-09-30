@@ -29,6 +29,4 @@ My research interests mainly lie in **generative AI** and **computer vision**. M
 - **[09/2026]** We release a novel human motion generation model Timo, try the [demo](https://timo.kyfafyd.wang)!
 - **[09/2026]** Serving as reviewer for ICLR 2027, AISTATS 2027.
 - **[07/2026]** Serving as reviewer for AAAI 2027.
-- **[01/2026]** Serving as reviewer for ECCV 2026.
-- **[10/2025]** One paper on customized video generation is accepted by IEEE TMM.
 
