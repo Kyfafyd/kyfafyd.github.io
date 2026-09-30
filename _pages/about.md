@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-I am a researcher in [LimX Dynamics](https://www.limxdynamics.com/en) working on embodied foundation model pre-training and post-training, covering topics like whole body motion generation, interactive co-speech, human motion imitation and serving the products like humanoid robot tour guide, multimodal interaction, etc. 
+I am a researcher in [LimX Dynamics](https://www.limxdynamics.com/en) working on **embodied foundation model** pre-training and post-training, covering topics like **whole body motion generation**, **interactive co-speech**, **human motion imitation** and serving the products like humanoid robot tour guide, multimodal interaction, etc. 
 Before joining LimX Dynamics, I obtained my Ph.D. degree at [CSE](http://www.cse.cuhk.edu.hk), [CUHK](http://www.cuhk.edu.hk), and B.Eng. degree at [ISEE](http://www.isee.zju.edu.cn/iseenglish), [ZJU](http://www.zju.edu.cn/english). 
 In the past, I was very lucky to work at [Alibaba](https://www.alibaba.com), [Tencent Hunyuan](https://hy.tencent.ai), [Shanghai AI Lab](https://www.shlab.org.cn), [Huawei Noah Ark's Lab](https://www.noahlab.com.hk/en), and [Sensetime](https://www.sensetime.com/en). Previously, I was selected for multiple top talent programs including [AliStar](https://campus-talent.alibaba.com/campus/alistar?lang=en), [Tencent Project Up](https://join.qq.com/index.html), [JD TGT](https://campus.jd.com/home#/talentProject), etc.
 <!-- My research mainly lies in embodied AI, generative AI, and computer vision. Currently, I am working on large-scale video generation and post training. -->
