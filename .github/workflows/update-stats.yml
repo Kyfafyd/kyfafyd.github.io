@@ -13,45 +13,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      
-      - name: Install dependencies
-        run: pip install scholarly
-        
+
       - name: Update stats
         run: |
           python << 'EOF'
-          from scholarly import scholarly
           import json
+          import re
           import sys
-          
-          # 替换为你的 Google Scholar ID
+          import urllib.request
+
           SCHOLAR_ID = "1kEufdwAAAAJ"
-          
+          URL = f"https://scholar.google.com/citations?user={SCHOLAR_ID}&hl=en"
+          UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
+
+          # Google Scholar often answers CI runners with a CAPTCHA page. Treat that as
+          # "no update" rather than a failure, so the badge keeps its last known value
+          # instead of the workflow going red every week.
           try:
-              author = scholarly.search_author_id(SCHOLAR_ID)
-              author = scholarly.fill(author)
-              cites = author['citedby']
-              
-              data = {
+              request = urllib.request.Request(URL, headers={"User-Agent": UA})
+              html = urllib.request.urlopen(request, timeout=30).read().decode("utf-8", "replace")
+          except Exception as error:
+              print(f"Could not reach Google Scholar ({error}); keeping previous value")
+              sys.exit(0)
+
+          stats = re.findall(r'gsc_rsb_std[^>]*>([0-9,]+)<', html)
+          if not stats:
+              print("Google Scholar returned no stats table (likely a CAPTCHA); keeping previous value")
+              sys.exit(0)
+
+          citations = stats[0].replace(",", "")
+          with open("gs_data_shieldsio.json", "w") as handle:
+              json.dump({
                   "schemaVersion": 1,
                   "label": "citations",
-                  "message": str(cites),
-                  "color": "9cf"
-              }
-              
-              with open('gs_data_shieldsio.json', 'w') as f:
-                  json.dump(data, f, indent=2)
-              print(f"Updated citations: {cites}")
-          except Exception as e:
-              print(f"Error: {e}")
-              sys.exit(1)
+                  "message": citations,
+                  "color": "9cf",
+              }, handle, indent=2)
+          print(f"Updated citations: {citations}")
           EOF
-          
+
       - name: Commit and push
         run: |
           git config --global user.email "action@github.com"

@@ -1,1 +1,0 @@
-expect -f scp.sh

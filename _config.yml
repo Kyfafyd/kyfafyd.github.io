@@ -11,8 +11,8 @@ title                    : "Zhao (Dylan) Wang"
 title_separator          : "-"
 name                     : &name "Zhao (Dylan) Wang"
 description              : &description "personal description"
-# url                      : http://127.0.0.1:4000
 url                      : https://kyfafyd.wang # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+# Local development overrides this via _config.dev.yml; do not edit the line above to a localhost URL.
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "kyfafyd/academicpage"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -74,9 +74,10 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               :  "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          :
+    # GA4 Measurement ID. Nothing is emitted while this is blank.
+    tracking_id          : "G-9TQ8BHHX5Y"
 
 # Photo by <a href="https://yuehaolab.com">Yuehao Wang</a>
 # Site Author
@@ -257,7 +258,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Hong_Kong # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
