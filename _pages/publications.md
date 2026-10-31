@@ -11,9 +11,9 @@ author_profile: true
 See [Google Scholar Profile](https://scholar.google.com/citations?user=1kEufdwAAAAJ)
 
 <div class="impact-chart" data-src="/kyfafyd/profile/dashboard-site.svg" style="position: relative; max-width: 760px; margin: 0 0 2em;">
-  <img src="/kyfafyd/profile/dashboard-site.svg" alt="Total GitHub stars and Google Scholar citations over time" width="760" height="228" style="display: block; width: 100%; height: auto;">
+  <img src="/kyfafyd/profile/dashboard-site.svg?v={{ site.time | date: '%s' }}" alt="Total GitHub stars and Google Scholar citations over time" width="760" height="228" style="display: block; width: 100%; height: auto;">
 </div>
-<script src="{{ '/assets/js/impact-chart.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/impact-chart.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
 
 - Timo: Taming Multimodal Diffusion Transformer for Human Motion Generation. <br/>

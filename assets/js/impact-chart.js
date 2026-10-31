@@ -6,7 +6,8 @@
 
   var SVG_NS = "http://www.w3.org/2000/svg";
 
-  fetch(box.getAttribute("data-src"))
+  // Cloudflare tells browsers to keep files for four hours; an hourly key picks up the daily refresh within the hour.
+  fetch(box.getAttribute("data-src") + "?v=" + new Date().toISOString().slice(0, 13))
     .then(function (response) {
       if (!response.ok) throw new Error("HTTP " + response.status);
       return response.text();
