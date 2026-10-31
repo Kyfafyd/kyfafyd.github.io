@@ -48,7 +48,7 @@
     });
     var tip = document.createElement("div");
     tip.style.cssText = "position:absolute;top:0;left:0;visibility:hidden;pointer-events:none;white-space:nowrap;" +
-      "background:#fff;border:1px solid #dfe3e6;border-radius:6px;padding:6px 10px;font-size:12px;line-height:1.6;color:#494e52";
+      "background:#fff;border:1px solid #e1e4e7;border-radius:4px;padding:6px 10px;font-size:13px;line-height:1.6;color:#494e52";
     box.appendChild(tip);
 
     function nearest(x) {
